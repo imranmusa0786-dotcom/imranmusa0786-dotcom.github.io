@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────────────────────
+#  AUTONEWS CONFIG  — edit the values in this file, nothing else
+# ─────────────────────────────────────────────────────────────
+
+site:
+  name: "TechShield News"                       # your site's name (change it)
+  tagline: "Daily news on home security, VPNs, streaming TV & telecom"
+  # Start on the free GitHub Pages URL. When you buy a domain, change this
+  # ONE line to https://yourdomain.com and add the CNAME (see README).
+  url: "https://imranmusa0786-dotcom.github.io/techshield-news"
+  author: "TechShield Editorial"                # the byline on every post
+  email: "you@example.com"                      # shown on the Contact page
+  language: "en"
+
+generation:
+  model: "gemini-2.5-flash"    # free tier. fallback: "gemini-2.0-flash"
+  qa_model: "gemini-2.5-flash" # cheap/free judge for the QA gate
+  max_attempts: 6              # on QA rejection, try the next story, up to this many
+  min_words: 350               # hard-rule floor; shorter = auto-rejected
+  posts_per_run: 1             # articles to publish per 2-hour run (keep at 1-2 early)
+
+# ── Your niche feeds. Add/remove freely. Most sites expose /feed/ or /rss.
+#    Use these as INPUT only — the pipeline writes ORIGINAL articles from them.
+feeds:
+  # Home security
+  - "https://www.cnet.com/rss/home/"
+  # VPN / privacy / cybersecurity
+  - "https://www.techradar.com/rss/vpn"
+  - "https://feeds.feedburner.com/TheHackersNews"
+  # Cord-cutting / streaming / satellite TV
+  - "https://www.cordcuttersnews.com/feed/"
+  # Telecom / AT&T
+  - "https://www.lightreading.com/rss.xml"

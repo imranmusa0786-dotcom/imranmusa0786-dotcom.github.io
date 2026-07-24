@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="page-title">Latest News</h1>
+{% if not posts %}
+  <p class="empty">No articles yet — the first ones publish automatically once the pipeline runs.</p>
+{% endif %}
+<ul class="post-list">
+{% for p in posts %}
+  <li>
+    <a class="post-link" href="{{ p.url }}">{{ p.title }}</a>
+    <div class="meta">{{ p.date_human }} · {{ p.author }}</div>
+    {% if p.meta_description %}<p class="excerpt">{{ p.meta_description }}</p>{% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

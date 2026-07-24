@@ -1,0 +1,47 @@
+:root{
+  --ink:#1a1f2b; --muted:#5b6675; --line:#e6e9ef; --bg:#ffffff;
+  --accent:#1f5fd6; --soft:#f6f8fb;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;line-height:1.65;font-size:18px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+main{max-width:760px;margin:0 auto;padding:20px 20px 60px}
+
+.site-head{max-width:760px;margin:0 auto;padding:26px 20px 14px;border-bottom:2px solid var(--ink)}
+.brand{font-size:30px;font-weight:700;color:var(--ink);letter-spacing:-.5px;
+  font-family:Georgia,serif;display:inline-block}
+.tag{margin:4px 0 12px;color:var(--muted);font-size:15px;font-style:italic}
+.site-head nav{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:14px;display:flex;flex-wrap:wrap;gap:16px}
+.site-head nav a{color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+
+.page-title{font-size:22px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-top:26px}
+.post-list{list-style:none;padding:0;margin:0}
+.post-list li{padding:20px 0;border-bottom:1px solid var(--line)}
+.post-link{font-size:23px;font-weight:700;color:var(--ink);line-height:1.3;display:block}
+.post-link:hover{color:var(--accent)}
+.meta{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:13px;color:var(--muted);margin:6px 0}
+.excerpt{margin:6px 0 0;color:#39424f;font-size:17px}
+.empty{color:var(--muted);font-style:italic;padding:30px 0}
+
+.article h1{font-size:34px;line-height:1.2;letter-spacing:-.5px;margin:22px 0 6px}
+.article .body{margin-top:18px}
+.article .body p{margin:0 0 18px}
+.article .body a{text-decoration:underline}
+.tags{margin:24px 0 0;font-family:-apple-system,Arial,sans-serif;font-size:13px;color:var(--muted)}
+.tags span{background:var(--soft);padding:3px 9px;border-radius:6px;display:inline-block;margin:2px}
+.back{margin-top:30px;font-family:-apple-system,Arial,sans-serif;font-size:14px}
+
+.site-foot{max-width:760px;margin:40px auto 0;padding:22px 20px 40px;border-top:1px solid var(--line);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:13px;color:var(--muted)}
+.site-foot p{margin:4px 0}
+
+@media(max-width:600px){
+  body{font-size:17px}
+  .article h1{font-size:27px}
+  .brand{font-size:25px}
+}

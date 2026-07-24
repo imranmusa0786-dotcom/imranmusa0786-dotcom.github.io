@@ -1,0 +1,64 @@
+name: Publish news
+
+on:
+  schedule:
+    # Every 2 hours (12 posts/day max). See README before launch:
+    # for a BRAND-NEW site, start slower — comment the line above and use:
+    #   - cron: "0 */8 * * *"     # 3x/day for the first month, then speed up
+    - cron: "0 */2 * * *"
+  workflow_dispatch: {}          # lets you run it by hand from the Actions tab
+  push:
+    branches: [main]             # rebuild the site when you edit config/pages
+
+permissions:
+  contents: write                # to commit generated posts back
+  pages: write                   # to deploy to GitHub Pages
+  id-token: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Generate articles
+        # only generate on the schedule or a manual run, not on config pushes
+        if: github.event_name != 'push'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python generate.py
+
+      - name: Commit new posts
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "autonews-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/posts seen.json
+          git commit -m "auto: publish new articles" || echo "nothing new to commit"
+          git push || echo "nothing to push"
+
+      - name: Build static site
+        run: python build.py
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

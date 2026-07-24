@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.name }}{% endblock %}</title>
+  <meta name="description" content="{% block desc %}{{ site.tagline }}{% endblock %}">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/rss.xml">
+</head>
+<body>
+  <header class="site-head">
+    <a class="brand" href="/">{{ site.name }}</a>
+    <p class="tag">{{ site.tagline }}</p>
+    <nav>
+      <a href="/">Home</a>
+      {% for pg in pages %}<a href="{{ pg.url }}">{{ pg.title }}</a>{% endfor %}
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="site-foot">
+    <p>&copy; {{ site.name }} — {{ site.tagline }}</p>
+    <p>Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </footer>
+</body>
+</html>

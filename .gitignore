@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+_site/
+.env
+.DS_Store
+_to_delete/
