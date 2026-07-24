@@ -5,7 +5,7 @@ on:
     # Every 2 hours (12 posts/day max). See README before launch:
     # for a BRAND-NEW site, start slower — comment the line above and use:
     #   - cron: "0 */8 * * *"     # 3x/day for the first month, then speed up
-    - cron: "0 */2 * * *"
+    - cron: "0 */8 * * *"
   workflow_dispatch: {}          # lets you run it by hand from the Actions tab
   push:
     branches: [main]             # rebuild the site when you edit config/pages
