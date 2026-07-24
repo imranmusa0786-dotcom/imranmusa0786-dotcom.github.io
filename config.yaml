@@ -13,8 +13,8 @@ site:
   language: "en"
 
 generation:
-    model: "gemini-3.6-flash"    # current GA flash model
-    qa_model: "gemini-3.6-flash" # judge for the QA gate
+  model: "gemini-3.6-flash"    # current GA flash model
+  qa_model: "gemini-3.6-flash" # judge for the QA gate
   max_attempts: 6              # on QA rejection, try the next story, up to this many
   min_words: 350               # hard-rule floor; shorter = auto-rejected
   posts_per_run: 1             # articles to publish per 2-hour run (keep at 1-2 early)
