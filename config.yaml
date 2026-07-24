@@ -7,7 +7,7 @@ site:
   tagline: "Daily news on home security, VPNs, streaming TV & telecom"
   # Start on the free GitHub Pages URL. When you buy a domain, change this
   # ONE line to https://yourdomain.com and add the CNAME (see README).
-  url: "https://imranmusa0786-dotcom.github.io/techshield-news"
+  url: "https://imranmusa0786-dotcom.github.io"
   author: "TechShield Editorial"                # the byline on every post
   email: "you@example.com"                      # shown on the Contact page
   language: "en"
