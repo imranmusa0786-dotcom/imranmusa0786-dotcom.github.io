@@ -2,7 +2,7 @@
 
 We welcome tips, feedback, corrections, and questions from readers.
 
-**Email:** you@example.com
+**Email:** contact@techshieldnews.com
 
 If you believe an article contains an error, please email us with the article title and the specific detail in question — we review every correction request and update or retract as needed.
 
