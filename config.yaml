@@ -9,7 +9,7 @@ site:
   # ONE line to https://yourdomain.com and add the CNAME (see README).
   url: "https://techshieldnews.com"
   author: "TechShield Editorial"                # the byline on every post
-  email: "you@example.com"                      # shown on the Contact page
+  email: "contact@techshieldnews.com"
   language: "en"
 
 generation:
