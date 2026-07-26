@@ -1,14 +1,34 @@
 {% extends "base.html" %}
 {% block title %}{{ post.title }} — {{ site.name }}{% endblock %}
-{% block desc %}{{ post.meta_description }}{% endblock %}
+{% block og_title %}{{ post.title }}{% endblock %}
+{% block tw_title %}{{ post.title }}{% endblock %}
 {% block content %}
 <article class="article">
+  <div class="eyebrow"><a href="/category/{{ post.category }}/">{{ post.category_name }}</a></div>
   <h1>{{ post.title }}</h1>
   <div class="meta">By {{ post.author }} · {{ post.date_human }}</div>
+  {% if post.image %}
+  <figure class="lede">
+    <img src="{{ post.image }}" alt="{{ post.image_alt }}" width="1200" height="675" loading="eager">
+  </figure>
+  {% endif %}
   <div class="body">{{ post.html|safe }}</div>
   {% if post.tags %}
   <div class="tags">{% for t in post.tags %}<span>#{{ t }}</span> {% endfor %}</div>
   {% endif %}
+
+  {% if related %}
+  <aside class="related">
+    <h2>Related coverage</h2>
+    <ul>
+      {% for r in related %}
+      <li><a href="{{ r.url }}">{{ r.title }}</a>
+        <span class="rmeta">{{ r.category_name }} · {{ r.date_human }}</span></li>
+      {% endfor %}
+    </ul>
+  </aside>
+  {% endif %}
+
   <p class="back"><a href="/">← All news</a></p>
 </article>
 {% endblock %}

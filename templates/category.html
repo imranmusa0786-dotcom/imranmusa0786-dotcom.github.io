@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %}{{ heading }} — {{ site.name }}{% endblock %}
-{% block og_title %}{{ heading }} — {{ site.name }}{% endblock %}
-{% block tw_title %}{{ heading }} — {{ site.name }}{% endblock %}
+{% block title %}{{ category.name }} — {{ site.name }}{% endblock %}
+{% block og_title %}{{ category.name }} — {{ site.name }}{% endblock %}
+{% block tw_title %}{{ category.name }} — {{ site.name }}{% endblock %}
 {% block content %}
-<h1 class="page-title">{{ heading }}</h1>
+<h1 class="page-title">{{ category.name }}</h1>
 {% if not posts %}
-  <p class="empty">No articles yet — the first ones publish automatically once the pipeline runs.</p>
+  <p class="empty">No articles in this category yet — check back soon.</p>
 {% endif %}
 <ul class="post-list">
 {% for p in posts %}
@@ -14,7 +14,6 @@
     <a class="thumb" href="{{ p.url }}"><img src="{{ p.image }}" alt="{{ p.image_alt }}" width="1200" height="675" loading="lazy"></a>
     {% endif %}
     <div class="post-body">
-      <div class="eyebrow"><a href="/category/{{ p.category }}/">{{ p.category_name }}</a></div>
       <a class="post-link" href="{{ p.url }}">{{ p.title }}</a>
       <div class="meta">{{ p.date_human }} · {{ p.author }}</div>
       {% if p.meta_description %}<p class="excerpt">{{ p.meta_description }}</p>{% endif %}
@@ -22,7 +21,4 @@
   </li>
 {% endfor %}
 </ul>
-{% if show_archive_link %}
-<p class="more"><a href="/archive/">Browse the full archive →</a></p>
-{% endif %}
 {% endblock %}

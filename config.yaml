@@ -11,13 +11,44 @@ site:
   author: "TechShield Editorial"                # the byline on every post
   email: "contact@techshieldnews.com"
   language: "en"
+  # Used in Organization / NewsArticle structured data and social cards.
+  logo: "/static/logo.png"
+  default_image: "/static/og-default.jpg"
+  twitter: ""                                   # optional @handle, e.g. "@techshieldnews"
 
 generation:
-  model: "gemini-3.6-flash"    # current GA flash model
+  model: "gemini-3.6-flash"    # current GA flash text model
   qa_model: "gemini-3.6-flash" # judge for the QA gate
+  image_model: "gemini-3.1-flash-image"  # image model; falls back safely if unavailable
   max_attempts: 6              # on QA rejection, try the next story, up to this many
-  min_words: 350               # hard-rule floor; shorter = auto-rejected
-  posts_per_run: 1             # articles to publish per 2-hour run (keep at 1-2 early)
+  min_words: 500               # hard-rule floor; shorter = auto-rejected
+  min_sources: 2               # article must link at least this many external sources
+  min_data_points: 1           # article must contain at least this many concrete figures
+  posts_per_run: 1             # articles to publish per run (keep at 1-2 early)
+
+# ── Coverage categories. Each post is auto-classified into one of these by
+#    keyword. They drive the category pages, nav, and related-post blocks.
+categories:
+  - slug: "home-security"
+    name: "Home Security"
+    keywords: ["home security", "camera", "doorbell", "alarm", "smart home",
+               "surveillance", "sensor", "lock", "floodlight", "blink", "ring",
+               "burglar", "motion", "cctv", "appliance", "vacuum"]
+  - slug: "vpn-privacy"
+    name: "VPN & Privacy"
+    keywords: ["vpn", "privacy", "no-log", "encryption", "malware", "phishing",
+               "breach", "hacker", "cybersecurity", "exploit", "ransomware",
+               "data protection", "tracking", "malvertising", "security"]
+  - slug: "streaming"
+    name: "Streaming & TV"
+    keywords: ["streaming", "stream", "cord-cutting", "cord cutting", "netflix",
+               "disney", "satellite", "dish", "cable", "bundle", "roku", "viewership",
+               "broadcast", "sports media", "tv", "hulu", "world cup"]
+  - slug: "telecom"
+    name: "Telecom & Internet"
+    keywords: ["at&t", "att", "fiber", "5g", "broadband", "telecom", "isp",
+               "verizon", "t-mobile", "internet provider", "network", "spectrum",
+               "wireless", "data cap"]
 
 # ── Your niche feeds. Add/remove freely. Most sites expose /feed/ or /rss.
 #    Use these as INPUT only — the pipeline writes ORIGINAL articles from them.

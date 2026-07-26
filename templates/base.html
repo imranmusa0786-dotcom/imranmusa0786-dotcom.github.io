@@ -5,9 +5,30 @@
   <meta name="google-site-verification" content="Cr1o-Rw3DJtXUWOgVJDRNS_45BAbCN4QYuT_8PHhDBk" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ site.name }}{% endblock %}</title>
-  <meta name="description" content="{% block desc %}{{ site.tagline }}{% endblock %}">
+  <meta name="description" content="{{ page_desc }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:title" content="{% block og_title %}{{ site.name }}{% endblock %}">
+  <meta property="og:description" content="{{ page_desc }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block tw_title %}{{ site.name }}{% endblock %}">
+  <meta name="twitter:description" content="{{ page_desc }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  {% if site.twitter %}<meta name="twitter:site" content="{{ site.twitter }}">{% endif %}
+
   <link rel="stylesheet" href="/static/style.css">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/rss.xml">
+  {% for ld in jsonld %}
+  <script type="application/ld+json">{{ ld|safe }}</script>
+  {% endfor %}
 </head>
 <body>
   <header class="site-head">
@@ -15,6 +36,7 @@
     <p class="tag">{{ site.tagline }}</p>
     <nav>
       <a href="/">Home</a>
+      {% for c in nav_categories %}<a href="{{ c.url }}">{{ c.name }}</a>{% endfor %}
       {% for pg in pages %}<a href="{{ pg.url }}">{{ pg.title }}</a>{% endfor %}
     </nav>
   </header>
@@ -22,6 +44,10 @@
   <footer class="site-foot">
     <p>&copy; {{ site.name }} — {{ site.tagline }}</p>
     <p>Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    <p class="foot-links">
+      {% for c in nav_categories %}<a href="{{ c.url }}">{{ c.name }}</a> · {% endfor %}
+      <a href="/archive/">Archive</a> · <a href="/rss.xml">RSS feed</a>
+    </p>
   </footer>
 </body>
 </html>

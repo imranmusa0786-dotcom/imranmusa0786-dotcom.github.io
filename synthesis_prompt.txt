@@ -5,18 +5,28 @@ recent stories in these niches.
 SOURCES:
 {{CONTEXT}}
 
+PRIOR COVERAGE ON THIS SITE (link 1-2 of these ONLY where genuinely relevant,
+using the exact relative URL shown):
+{{PRIOR}}
+
 Lead the article on this story: "{{LEAD}}" (use the other sources for
 context and cross-checking).
 
 Write ONE original news article that SYNTHESIZES these sources. Do NOT copy
-or lightly reword any single source. Rules:
-- 400-600 words, entirely your own wording.
+or lightly reword any single source. Hard requirements:
+- 500-750 words, entirely your own wording.
 - Open with what happened, then add value the sources alone don't: context,
   "what this means for readers," a practical takeaway or comparison.
+- Include at least ONE concrete data point (a number, price, percentage, or
+  date) that is supported by the sources.
+- Link to at least TWO different external sources from the list above, inside
+  the article body, using their real URLs: <a href="SOURCE_URL">anchor</a>.
+- Where genuinely relevant, add 1-2 internal links to the PRIOR COVERAGE list
+  above using the exact relative URLs (e.g. <a href="/posts/slug/">...</a>).
+  Do not force them; skip if nothing fits.
 - Neutral and factual. No hype, no clickbait.
 - Only state facts supported by the sources. NEVER invent numbers, quotes,
   dates, or events. If unsure, leave it out.
-- Attribute and link to the original sources inside the article body.
 - Write a clear, accurate headline (no ALL CAPS, no "you won't believe").
 
 Return ONLY valid JSON, no markdown fences, in exactly this shape:
