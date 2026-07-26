@@ -9,7 +9,8 @@ Strategy (best-effort, never fatal):
 Either way we always end up with a >=1200px-wide JPEG and alt text, so the
 build never breaks and every article has a valid featured image + og:image.
 """
-import io, os, re, base64, pathlib, hashlib
+import io, os, re, base64, pathlib, hashlib, time
+import urllib.request, urllib.parse
 
 ROOT     = pathlib.Path(__file__).parent
 IMG_DIR  = ROOT / "static" / "images"
@@ -112,6 +113,30 @@ def gen_gemini_image(client, model, prompt, out_path):
     return False
 
 
+# ---------------------------------------------------------------- pollinations (free AI)
+def _seed(slug):
+    return int(hashlib.sha1(slug.encode()).hexdigest()[:7], 16) % 1_000_000
+
+
+def gen_pollinations_image(prompt, out_path, slug):
+    """Free, keyless AI image via Pollinations. Returns True on success."""
+    q = urllib.parse.quote(prompt[:400], safe="")
+    url = (f"https://image.pollinations.ai/prompt/{q}"
+           f"?width=1200&height=675&model=flux&nologo=true&enhance=true&seed={_seed(slug)}")
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "TechShieldNews/1.0"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                data = r.read()
+            if data and len(data) > 3000 and _save_jpeg(data, out_path):
+                return True
+            print(f"    [img] pollinations returned too little data ({len(data) if data else 0}b)")
+        except Exception as e:
+            print(f"    [img] pollinations attempt {attempt+1} failed: {e}")
+        time.sleep(16)   # anonymous rate limit is ~1 request / 15s
+    return False
+
+
 # ---------------------------------------------------------------- placeholder
 def _font(size):
     from PIL import ImageFont
@@ -178,10 +203,10 @@ def ensure_image(post, cfg, client=None, force=False):
     if out.exists() and not force and existing_kind == "ai":
         return rel, post.get("image_alt", alt), "ai"
 
-    model = cfg["generation"].get("image_model", "gemini-3.1-flash-image")
     prompt = image_prompt(post["title"], cat_name)
-    if gen_gemini_image(client, model, prompt, out):
-        print(f"    [img] AI image -> {fname}")
+    # Free AI image via Pollinations (Gemini image models are not on the free tier).
+    if gen_pollinations_image(prompt, out, slug):
+        print(f"    [img] AI image (pollinations) -> {fname}")
         return rel, alt, "ai"
 
     # fallback

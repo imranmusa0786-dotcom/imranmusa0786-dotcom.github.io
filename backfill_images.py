@@ -7,7 +7,7 @@ placeholder), it (re)generates via Gemini when GEMINI_API_KEY is present, else
 falls back to a branded placeholder. Idempotent: AI images are left untouched.
 Run locally with no key to seed placeholders.
 """
-import os, json, glob, pathlib
+import os, json, glob, pathlib, time
 import yaml
 
 import taxonomy
@@ -41,15 +41,18 @@ def main():
 
         img_file = imagelib.IMG_DIR / f"{slug}.jpg"
         missing = (not p.get("image")) or (not img_file.exists())
-        if not missing:
+        # also upgrade earlier branded placeholders to real AI images
+        upgrade = p.get("image_kind") == "placeholder"
+        if not (missing or upgrade):
             continue
 
-        rel, alt, kind = imagelib.ensure_image(p, CFG, client=client, force=False)
+        rel, alt, kind = imagelib.ensure_image(p, CFG, client=client, force=upgrade)
         if rel:
             p["image"], p["image_alt"], p["image_kind"] = rel, alt, kind
             pathlib.Path(f).write_text(json.dumps(p, indent=2, ensure_ascii=False))
             changed += 1
             print(f"[backfill] {slug}: {kind}")
+            time.sleep(15)   # stay under the anonymous Pollinations rate limit
     print(f"[backfill] updated {changed} post(s)")
 
 
