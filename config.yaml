@@ -20,7 +20,9 @@ generation:
   model: "gemini-3.6-flash"    # current GA flash text model
   qa_model: "gemini-3.6-flash" # judge for the QA gate
   image_model: "gemini-3.1-flash-image"  # image model; falls back safely if unavailable
-  max_attempts: 6              # on QA rejection, try the next story, up to this many
+  max_attempts: 3              # on QA rejection, try the next story, up to this many
+                               # (each attempt = 2 Gemini calls; free tier = 20/day,
+                               #  so 3 runs/day x 3 attempts stays inside the quota)
   min_words: 450               # hard-rule floor; shorter = auto-rejected
   min_sources: 2               # article must link at least this many external sources
   min_data_points: 1           # article must contain at least this many concrete figures
