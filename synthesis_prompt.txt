@@ -20,8 +20,10 @@ or lightly reword any single source. Hard requirements:
   "what this means for readers," a practical takeaway or comparison.
 - Include at least ONE concrete data point (a number, price, percentage, or
   date) that is supported by the sources.
-- Link to at least TWO different external sources from the list above, inside
+- Link to at least TWO different source articles from the list above, inside
   the article body, using their real URLs: <a href="SOURCE_URL">anchor</a>.
+  Two different source URLs is a HARD requirement (prefer two different
+  outlets when the list offers them).
 - Where genuinely relevant, add 1-2 internal links to the PRIOR COVERAGE list
   above using the exact relative URLs (e.g. <a href="/posts/slug/">...</a>).
   Do not force them; skip if nothing fits.

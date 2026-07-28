@@ -120,12 +120,9 @@ DATA_RE     = re.compile(r'(\$\s?\d|\d+\s?%|\b\d[\d,\.]*\b)')
 
 
 def count_sources(html_str):
-    hosts = set()
-    for u in EXT_LINK_RE.findall(html_str):
-        m = re.match(r'https?://([^/]+)/?', u)
-        if m:
-            hosts.add(m.group(1).lower().replace("www.", ""))
-    return len(hosts)
+    """Distinct external source URLs (two articles from one outlet count as 2)."""
+    urls = {u.rstrip("/").lower() for u in EXT_LINK_RE.findall(html_str)}
+    return len(urls)
 
 
 def count_data_points(html_str):
