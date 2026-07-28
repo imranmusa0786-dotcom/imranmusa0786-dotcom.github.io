@@ -181,6 +181,7 @@ def save_post(data):
     try:
         rel, alt, kind = imagelib.ensure_image(post, CFG, client=client)
         post["image"], post["image_alt"], post["image_kind"] = rel, alt, kind
+        post["image_pv"] = imagelib.PROMPT_VERSION
     except Exception as e:
         print(f"  image step error (non-fatal): {e}")
     (POSTS / f"{slug}.json").write_text(

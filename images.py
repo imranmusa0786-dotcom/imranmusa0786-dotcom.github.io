@@ -28,13 +28,21 @@ CAT_COLORS = {
 }
 
 
+# Bump this whenever the prompt style changes — the backfill regenerates any
+# image whose stored version doesn't match.
+PROMPT_VERSION = 2
+
+
 def image_prompt(title, category_name):
     return (
-        f'Editorial news header illustration for an article titled "{title}". '
-        f'Topic: {category_name}. Clean, modern, professional technology-news '
-        f'style; conceptual and symbolic. Absolutely no text, no words, no logos, '
-        f'no watermarks, no real brand marks. Wide 16:9 composition, muted blue '
-        f'and slate colour palette, soft studio lighting.'
+        f"Photorealistic editorial press photograph for a technology news story "
+        f"about: {title}. Theme: {category_name}. Realistic professional news "
+        f"photography, shot on a DSLR camera, natural lighting, shallow depth of "
+        f"field, cinematic composition, high detail, real-world scene with real "
+        f"objects and environments. Any screens or displays must be blurred or "
+        f"out of focus. Strictly NO text, no words, no letters, no numbers, no "
+        f"captions, no headlines, no posters, no signs, no logos, no watermarks, "
+        f"no typography of any kind anywhere in the image."
     )
 
 
@@ -200,7 +208,8 @@ def ensure_image(post, cfg, client=None, force=False):
     alt = alt_text(post["title"], cat_name)
 
     existing_kind = post.get("image_kind")
-    if out.exists() and not force and existing_kind == "ai":
+    if (out.exists() and not force and existing_kind == "ai"
+            and post.get("image_pv") == PROMPT_VERSION):
         return rel, post.get("image_alt", alt), "ai"
 
     prompt = image_prompt(post["title"], cat_name)

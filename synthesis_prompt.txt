@@ -14,7 +14,8 @@ context and cross-checking).
 
 Write ONE original news article that SYNTHESIZES these sources. Do NOT copy
 or lightly reword any single source. Hard requirements:
-- 500-750 words, entirely your own wording.
+- 600-800 words, entirely your own wording. This is a HARD minimum: articles
+  under 500 words are automatically rejected, so write generously.
 - Open with what happened, then add value the sources alone don't: context,
   "what this means for readers," a practical takeaway or comparison.
 - Include at least ONE concrete data point (a number, price, percentage, or

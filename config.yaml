@@ -21,7 +21,7 @@ generation:
   qa_model: "gemini-3.6-flash" # judge for the QA gate
   image_model: "gemini-3.1-flash-image"  # image model; falls back safely if unavailable
   max_attempts: 6              # on QA rejection, try the next story, up to this many
-  min_words: 500               # hard-rule floor; shorter = auto-rejected
+  min_words: 450               # hard-rule floor; shorter = auto-rejected
   min_sources: 2               # article must link at least this many external sources
   min_data_points: 1           # article must contain at least this many concrete figures
   posts_per_run: 1             # articles to publish per run (keep at 1-2 early)

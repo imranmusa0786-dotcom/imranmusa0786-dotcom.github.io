@@ -41,14 +41,16 @@ def main():
 
         img_file = imagelib.IMG_DIR / f"{slug}.jpg"
         missing = (not p.get("image")) or (not img_file.exists())
-        # also upgrade earlier branded placeholders to real AI images
-        upgrade = p.get("image_kind") == "placeholder"
+        # upgrade placeholders, and regenerate when the prompt style changed
+        upgrade = (p.get("image_kind") == "placeholder"
+                   or p.get("image_pv") != imagelib.PROMPT_VERSION)
         if not (missing or upgrade):
             continue
 
         rel, alt, kind = imagelib.ensure_image(p, CFG, client=client, force=upgrade)
         if rel:
             p["image"], p["image_alt"], p["image_kind"] = rel, alt, kind
+            p["image_pv"] = imagelib.PROMPT_VERSION
             pathlib.Path(f).write_text(json.dumps(p, indent=2, ensure_ascii=False))
             changed += 1
             print(f"[backfill] {slug}: {kind}")
