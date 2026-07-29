@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="google-site-verification" content="Cr1o-Rw3DJtXUWOgVJDRNS_45BAbCN4QYuT_8PHhDBk">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Google Consent Mode v2 — default denied until the visitor chooses. Reads a remembered choice. */
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{c=JSON.parse(localStorage.getItem('calchub_consent')||'null');}catch(e){}
+ var ad=(c&&c.ads)?'granted':'denied',an=(c&&c.analytics)?'granted':'denied';
+ gtag('consent','default',{ad_storage:ad,ad_user_data:ad,ad_personalization:ad,analytics_storage:an,wait_for_update:500});})();
+</script>
 <title>{{ title }}</title>
 <meta name="description" content="{{ desc }}">
 <link rel="canonical" href="{{ canonical }}">
@@ -60,10 +67,30 @@
     <a href="/contact/">Contact</a>
     <a href="/privacy/">Privacy</a>
     <a href="/disclaimer/">Disclaimer</a>
+    <a href="#" onclick="ccOpen();return false;">Cookie settings</a>
   </div>
 </div>
 <div class="foot-bottom">© {{ site.name }} — {{ site.tagline }}. Estimates only; see our <a href="/disclaimer/" style="color:#cbd5e1;text-decoration:underline">disclaimer</a>.</div>
 </footer>
+<div class="cc-banner" id="ccBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <p><strong>We value your privacy.</strong> Calculations always stay in your browser. We use only essential cookies now; if we add advertising or analytics later, those cookies run only with your consent. See our <a href="/privacy/">Privacy&nbsp;Policy</a>.</p>
+  <div class="cc-actions">
+    <button class="cc-reject" id="ccReject" type="button">Reject non-essential</button>
+    <button class="cc-accept" id="ccAccept" type="button">Accept all</button>
+  </div>
+</div>
+<script>
+(function(){var K='calchub_consent',b=document.getElementById('ccBanner');
+ function save(o){try{localStorage.setItem(K,JSON.stringify(o));}catch(e){}}
+ function upd(o){if(window.gtag){gtag('consent','update',{ad_storage:o.ads?'granted':'denied',ad_user_data:o.ads?'granted':'denied',ad_personalization:o.ads?'granted':'denied',analytics_storage:o.analytics?'granted':'denied'});}}
+ var cur=null;try{cur=JSON.parse(localStorage.getItem(K)||'null');}catch(e){}
+ if(!cur){b.classList.add('show');}
+ function choose(v){save(v);upd(v);b.classList.remove('show');}
+ var a=document.getElementById('ccAccept'),r=document.getElementById('ccReject');
+ if(a)a.addEventListener('click',function(){choose({ads:true,analytics:true,ts:Date.now()});});
+ if(r)r.addEventListener('click',function(){choose({ads:false,analytics:false,ts:Date.now()});});
+ window.ccOpen=function(){b.classList.add('show');};})();
+</script>
 <script>
 (function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(!t||!n)return;
  function set(o){n.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');}

@@ -3,3 +3,6 @@ site:
   tagline: "Free calculators and everyday tools for money and life."
   url: "https://techshieldnews.com"
   email: "contact@techshieldnews.com"
+  # After AdSense approval, paste your publisher ID (looks like pub-1234567890123456)
+  # here and rebuild — this auto-generates the ads.txt file Google requires.
+  adsense_publisher_id: ""

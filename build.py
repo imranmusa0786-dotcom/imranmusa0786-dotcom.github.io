@@ -143,6 +143,14 @@ def main():
 
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
 
+    # ads.txt — only emitted once a real AdSense publisher ID is set in config.yaml
+    pub = str(SITE.get("adsense_publisher_id") or "").strip()
+    if pub:
+        if not pub.startswith("pub-"):
+            pub = "pub-" + pub.replace("pub-", "")
+        write("ads.txt", f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
+        print(f"  ads.txt written for {pub}")
+
     host = BASE.split("//", 1)[-1]
     if host and not host.endswith("github.io"):
         write("CNAME", host)
