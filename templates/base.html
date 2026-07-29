@@ -27,12 +27,15 @@
 <body>
 <header class="site-head"><div class="head-in">
   <a class="brand" href="/"><span class="logo">₵</span>{{ site.name }}</a>
-  <nav>
+  <nav id="nav">
     <a href="/#finance">Financial</a>
     <a href="/#utility">Everyday Tools</a>
     <a href="/all/">All Calculators</a>
     <a href="/about/">About</a>
   </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
 </div></header>
 <main>
 {% block content %}{% endblock %}
@@ -61,5 +64,13 @@
 </div>
 <div class="foot-bottom">© {{ site.name }} — {{ site.tagline }}. Estimates only; see our <a href="/disclaimer/" style="color:#cbd5e1;text-decoration:underline">disclaimer</a>.</div>
 </footer>
+<script>
+(function(){var t=document.getElementById('navToggle'),n=document.getElementById('nav');if(!t||!n)return;
+ function set(o){n.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o?'true':'false');}
+ t.addEventListener('click',function(){set(!n.classList.contains('open'));});
+ n.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+ window.addEventListener('resize',function(){if(window.innerWidth>860)set(false);});
+})();
+</script>
 </body>
 </html>

@@ -59,6 +59,14 @@
     return { payment: basePay, months: n, totalInterest: totalInterest, totalPaid: totalPaid, schedule: schedule, neverPayoff: false };
   }
 
+  // Loan principal supported by a given monthly payment (inverse of pmt).
+  function principalFromPayment(pay, annualRatePct, months) {
+    var r = annualRatePct / 100 / 12;
+    if (months <= 0 || pay <= 0) return 0;
+    if (r === 0) return pay * months;
+    return pay * (Math.pow(1 + r, months) - 1) / (r * Math.pow(1 + r, months));
+  }
+
   // Future value of a lump sum plus recurring contributions (end-of-period).
   function futureValue(principal, contribution, ratePerPeriod, periods) {
     var r = ratePerPeriod;
@@ -121,7 +129,8 @@
 
   root.FIN = {
     num: num, clamp: clamp, money: money, money0: money0, pct: pct, nfmt: nfmt,
-    pmt: pmt, amortize: amortize, futureValue: futureValue, contributionFor: contributionFor,
+    pmt: pmt, amortize: amortize, principalFromPayment: principalFromPayment,
+    futureValue: futureValue, contributionFor: contributionFor,
     donut: donut, legend: legend, el: el, on: on,
     C: { blue: "#2563eb", green: "#16a34a", amber: "#f59e0b", red: "#dc2626", violet: "#7c3aed", slate: "#64748b" }
   };
