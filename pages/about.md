@@ -1,9 +1,11 @@
-# About
+# About CalcHub
 
-TechShield News covers practical, everyday technology that protects and connects households: home security systems, VPNs and online privacy, streaming and satellite TV, and telecom and internet providers.
+CalcHub is a free collection of online calculators and everyday tools, built to give clear, accurate answers to common money and life questions — without sign-ups, paywalls, or clutter.
 
-Our goal is simple: take the day's most important developments across these areas and explain, in plain language, what they mean for ordinary readers — not just what happened, but why it matters and what you might do about it.
+Every calculator shows not just a result but the **formula and a plain-language explanation** behind it, so you can understand and trust the number. Our financial calculators use the same standard formulas that banks and lenders use, and each tool is tested against known values.
 
-We publish throughout the day so you can stay current without having to follow a dozen different outlets yourself. Every article synthesizes reporting from multiple sources, links back to those sources, and is checked for accuracy before it goes live. See our Editorial Policy for exactly how that works.
+**Your privacy comes first.** Every calculation runs entirely inside your own browser. The numbers you type are never sent to a server, stored, or shared.
 
-Have a tip, correction, or question? We'd genuinely like to hear it — reach us on the Contact page.
+We add new calculators regularly. If there's a tool you'd like to see, let us know on our [Contact](/contact/) page.
+
+CalcHub provides general information and estimates for educational purposes only, and not professional financial, medical, or legal advice. Please see our [Disclaimer](/disclaimer/).

@@ -1,53 +1,65 @@
 <!DOCTYPE html>
-<html lang="{{ site.language }}">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="google-site-verification" content="Cr1o-Rw3DJtXUWOgVJDRNS_45BAbCN4QYuT_8PHhDBk" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{ site.name }}{% endblock %}</title>
-  <meta name="description" content="{{ page_desc }}">
-  <link rel="canonical" href="{{ canonical }}">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="{{ site.name }}">
-  <meta property="og:type" content="{{ og_type }}">
-  <meta property="og:title" content="{% block og_title %}{{ site.name }}{% endblock %}">
-  <meta property="og:description" content="{{ page_desc }}">
-  <meta property="og:url" content="{{ canonical }}">
-  <meta property="og:image" content="{{ og_image }}">
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% block tw_title %}{{ site.name }}{% endblock %}">
-  <meta name="twitter:description" content="{{ page_desc }}">
-  <meta name="twitter:image" content="{{ og_image }}">
-  {% if site.twitter %}<meta name="twitter:site" content="{{ site.twitter }}">{% endif %}
-
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/rss.xml">
-  {% for ld in jsonld %}
-  <script type="application/ld+json">{{ ld|safe }}</script>
-  {% endfor %}
+<meta charset="utf-8">
+<meta name="google-site-verification" content="Cr1o-Rw3DJtXUWOgVJDRNS_45BAbCN4QYuT_8PHhDBk">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ desc }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ site.url }}/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ desc }}">
+<meta name="twitter:image" content="{{ site.url }}/static/og.png">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/static/style.css">
+<script defer src="/static/site.js"></script>
+{% for ld in jsonld %}<script type="application/ld+json">{{ ld|safe }}</script>
+{% endfor %}{% block head_extra %}{% endblock %}
 </head>
 <body>
-  <header class="site-head">
-    <a class="brand" href="/">{{ site.name }}</a>
-    <p class="tag">{{ site.tagline }}</p>
-    <nav>
-      <a href="/">Home</a>
-      {% for c in nav_categories %}<a href="{{ c.url }}">{{ c.name }}</a>{% endfor %}
-      {% for pg in pages %}<a href="{{ pg.url }}">{{ pg.title }}</a>{% endfor %}
-    </nav>
-  </header>
-  <main>{% block content %}{% endblock %}</main>
-  <footer class="site-foot">
-    <p>&copy; {{ site.name }} — {{ site.tagline }}</p>
-    <p>Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-    <p class="foot-links">
-      {% for c in nav_categories %}<a href="{{ c.url }}">{{ c.name }}</a> · {% endfor %}
-      <a href="/archive/">Archive</a> · <a href="/rss.xml">RSS feed</a>
-    </p>
-  </footer>
+<header class="site-head"><div class="head-in">
+  <a class="brand" href="/"><span class="logo">₵</span>{{ site.name }}</a>
+  <nav>
+    <a href="/#finance">Financial</a>
+    <a href="/#utility">Everyday Tools</a>
+    <a href="/all/">All Calculators</a>
+    <a href="/about/">About</a>
+  </nav>
+</div></header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="site-foot"><div class="foot-in">
+  <div>
+    <h4>{{ site.name }}</h4>
+    <p style="color:#94a3b8;font-size:14px;margin:0 0 6px">{{ site.tagline }}</p>
+    <p style="color:#94a3b8;font-size:13px;margin:0">Free to use. No sign-up. All calculations run privately in your browser.</p>
+  </div>
+  <div>
+    <h4>Popular</h4>
+    <a href="/mortgage-calculator/">Mortgage</a>
+    <a href="/compound-interest-calculator/">Compound Interest</a>
+    <a href="/loan-calculator/">Loan Payment</a>
+    <a href="/percentage-calculator/">Percentage</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="/all/">All calculators</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/disclaimer/">Disclaimer</a>
+  </div>
+</div>
+<div class="foot-bottom">© {{ site.name }} — {{ site.tagline }}. Estimates only; see our <a href="/disclaimer/" style="color:#cbd5e1;text-decoration:underline">disclaimer</a>.</div>
+</footer>
 </body>
 </html>

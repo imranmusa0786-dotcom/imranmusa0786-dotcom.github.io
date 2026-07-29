@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="crumbs"><a href="/">Home</a> › <a href="/all/">{{ tool.cat_name }}</a> › {{ tool.name }}</p>
+<h1 class="page-h">{{ tool.name }}</h1>
+<p class="lede">{{ tool.lede }}</p>
+
+<div class="calc-wrap">
+  <section class="panel" aria-label="Inputs">
+    {{ tool.body_html|safe }}
+  </section>
+  <section class="panel" id="results" aria-live="polite">
+    {{ tool.results_html|safe }}
+  </section>
+</div>
+
+<article class="prose">
+  {{ tool.intro_html|safe }}
+  {% if tool.faqs %}
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    {% for f in tool.faqs %}<details><summary>{{ f.q }}</summary><p>{{ f.a|safe }}</p></details>{% endfor %}
+  </div>
+  {% endif %}
+  <div class="callout"><strong>Disclaimer:</strong> This tool provides general estimates for educational purposes only and is not financial advice. Results may differ from figures provided by lenders or institutions. See our <a href="/disclaimer/">full disclaimer</a>.</div>
+
+  <h2>Related calculators</h2>
+  <div class="grid">
+    {% for r in related %}<a class="card" href="/{{ r.slug }}/"><div class="ico">{{ r.icon }}</div><h3>{{ r.name }}</h3><p>{{ r.short }}</p></a>{% endfor %}
+  </div>
+</article>
+
+<script>{{ tool.script_js|safe }}</script>
+{% endblock %}

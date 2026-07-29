@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="crumbs"><a href="/">Home</a> › All calculators</p>
+<h1 class="page-h">All calculators &amp; tools</h1>
+<p class="lede">Every free tool on {{ site.name }}, in one place.</p>
+<h2 class="section-title">💰 Financial Calculators</h2>
+<div class="grid">
+  {% for t in finance %}<a class="card" href="/{{ t.slug }}/"><div class="ico">{{ t.icon }}</div><h3>{{ t.name }}</h3><p>{{ t.short }}</p></a>{% endfor %}
+</div>
+<h2 class="section-title">🧰 Everyday Tools</h2>
+<div class="grid">
+  {% for t in utility %}<a class="card" href="/{{ t.slug }}/"><div class="ico">{{ t.icon }}</div><h3>{{ t.name }}</h3><p>{{ t.short }}</p></a>{% endfor %}
+</div>
+{% endblock %}

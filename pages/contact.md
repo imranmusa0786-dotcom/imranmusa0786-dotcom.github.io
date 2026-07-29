@@ -1,11 +1,11 @@
 # Contact
 
-We welcome tips, feedback, corrections, and questions from readers.
+We welcome feedback, corrections, and suggestions for new calculators.
 
 **Email:** contact@techshieldnews.com
 
-If you believe an article contains an error, please email us with the article title and the specific detail in question — we review every correction request and update or retract as needed.
+If you've spotted a result that looks wrong, please include the calculator name and the exact numbers you entered so we can reproduce and fix it quickly. Accuracy matters to us, and we review every report.
 
-For business or partnership inquiries, use the same address with "Business" in the subject line.
+For suggestions, tell us which calculator or tool you'd find useful — reader requests directly shape what we build next.
 
-We aim to respond within a few business days.
+We aim to reply within a few business days.

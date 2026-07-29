@@ -1,27 +1,21 @@
 # Privacy Policy
 
-_Last updated: July 26, 2026_
+_Last updated: July 29, 2026_
 
-This policy explains how TechShield News ("we," "us") handles information when you visit techshieldnews.com. We aim to collect as little as possible.
+CalcHub is built to respect your privacy. This policy explains what is — and isn't — collected when you use the site.
 
-**Information we collect.** You do not need an account or to submit personal information to read our articles. Like most websites, our hosting provider and analytics may automatically log standard technical data such as your IP address, approximate location, device and browser type, referring page, and the pages you view. If you email us, we receive the information you choose to send.
+**Calculations stay on your device.** Every calculator runs entirely in your browser using JavaScript. The numbers you enter (prices, incomes, dates, weights, and so on) are **never sent to us, stored, or shared**. We never see them.
 
-**How we use information.** We use technical and analytics data only in aggregate to keep the site secure, understand which articles are read, and improve our coverage. We use email you send us solely to respond to you. We do not sell your personal information, and we do not share reader email addresses.
+**Information we don't collect.** We do not require an account, and we do not ask for your name, email, or personal details to use any calculator.
 
-**Cookies and analytics.** We may use privacy-respecting analytics to measure readership. If we introduce advertising in the future, third-party ad partners may set cookies; we will update this policy to name those partners and describe your choices before doing so. You can block or delete cookies in your browser settings.
+**Standard technical data.** Like most websites, our hosting provider may automatically log basic technical information such as your IP address, browser type, and the pages requested, for security and aggregate traffic analysis.
 
-**Legal bases (GDPR).** For visitors in the European Economic Area and the UK, we process technical/analytics data under our legitimate interest in operating and securing the site, and process any email you send us to respond to your request. Where required, we rely on your consent, which you may withdraw at any time.
+**Cookies and analytics.** We may use privacy-respecting analytics to understand which tools are popular. If we introduce advertising in the future, third-party partners may set cookies; we will update this policy to describe them and your choices before doing so.
 
-**Your rights (GDPR / UK GDPR).** Subject to law, you have the right to access, correct, delete, restrict, or object to processing of your personal data, and the right to data portability. To exercise any of these, email us at the address on our Contact page. You also have the right to lodge a complaint with your local data protection authority.
+**Your rights.** Depending on your location (including under GDPR and CCPA/CPRA), you may have rights to access or delete personal data held about you. Because we don't collect personal information through the calculators, there is normally nothing to access or delete, but you can contact us with any request.
 
-**Your rights (CCPA / CPRA — California).** California residents have the right to know what personal information is collected, to request access or deletion, to correct inaccurate information, and to opt out of the "sale" or "sharing" of personal information. We do not sell or share personal information as those terms are defined by the CCPA/CPRA. We will not discriminate against you for exercising your rights. To make a request, contact us at the address on our Contact page.
+**Third-party links.** Some pages may link to external sites; we are not responsible for their privacy practices.
 
-**Data retention.** Aggregate technical and analytics data is retained only as long as needed for security and analysis. Emails are retained only as long as needed to handle your request.
+**Changes.** We may update this policy; material changes will be posted here with a revised date.
 
-**Children.** This site is intended for a general audience and is not directed to children under 13 (or under 16 in the EEA/UK). We do not knowingly collect personal information from children.
-
-**Third-party links.** Our articles link to external sources. We are not responsible for the privacy practices or content of those websites.
-
-**Changes.** We may update this policy; material changes will be posted on this page with a revised "last updated" date above.
-
-**Contact.** For any privacy question or to exercise your rights, reach us at the address on our Contact page.
+Questions? Reach us via the [Contact](/contact/) page.
