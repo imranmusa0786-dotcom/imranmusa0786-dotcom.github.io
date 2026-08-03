@@ -18,16 +18,31 @@ TOOLS.append({
  "desc":"Free mortgage calculator: estimate your monthly payment (PITI), total interest, and full amortization schedule. Include down payment, property tax, insurance and HOA.",
  "keywords":"mortgage calculator, monthly mortgage payment, home loan calculator, amortization",
  "body_html":"""
-  <div class="field"><label for="m_price">Home price</label>
-    <div class="inp has-pre"><span class="pre">$</span><input id="m_price" type="number" value="400000" min="0" step="1000"></div></div>
-  <div class="row2">
-    <div class="field"><label for="m_down">Down payment</label>
-      <div class="inp has-pre"><span class="pre">$</span><input id="m_down" type="number" value="80000" min="0" step="1000"></div></div>
-    <div class="field"><label for="m_term">Loan term <span class="hint">(years)</span></label>
-      <input id="m_term" type="number" value="30" min="1" max="40" step="1"></div>
+  <div class="sfield">
+    <div class="sf-top"><label for="m_price">Home price</label>
+      <div class="sf-box"><div class="inp has-pre"><span class="pre">$</span><input id="m_price" type="number" value="400000" min="0" step="1000"></div></div></div>
+    <input type="range" class="sl" id="m_price_r" min="50000" max="2000000" step="5000" value="400000" aria-label="Home price slider">
+    <div class="sl-scale"><span>$50,000</span><span>$2,000,000</span></div>
+    <div class="sf-hint">Enter the total price of the home you want to buy</div>
   </div>
-  <div class="field"><label for="m_rate">Interest rate (APR)</label>
-    <div class="inp has-suf"><input id="m_rate" type="number" value="6.5" min="0" step="0.01"><span class="suf">%</span></div></div>
+  <div class="sfield">
+    <div class="sf-top"><label for="m_down">Down payment</label>
+      <div class="sf-box"><div class="inp has-pre"><span class="pre">$</span><input id="m_down" type="number" value="80000" min="0" step="1000"></div></div></div>
+    <input type="range" class="sl" id="m_down_r" min="0" max="1000000" step="5000" value="80000" aria-label="Down payment slider">
+    <div class="sl-scale"><span>$0</span><span>$1,000,000</span></div>
+  </div>
+  <div class="sfield">
+    <div class="sf-top"><label for="m_rate">Interest rate (APR)</label>
+      <div class="sf-box"><div class="inp has-suf"><input id="m_rate" type="number" value="6.5" min="0" step="0.01"><span class="suf">%</span></div></div></div>
+    <input type="range" class="sl" id="m_rate_r" min="1" max="15" step="0.1" value="6.5" aria-label="Interest rate slider">
+    <div class="sl-scale"><span>1%</span><span>15%</span></div>
+  </div>
+  <div class="sfield">
+    <div class="sf-top"><label for="m_term">Loan period</label>
+      <div class="sf-box"><div class="inp has-suf"><input id="m_term" type="number" value="30" min="1" max="40" step="1"><span class="suf">yrs</span></div></div></div>
+    <input type="range" class="sl" id="m_term_r" min="5" max="40" step="1" value="30" aria-label="Loan period slider">
+    <div class="sl-scale"><span>5 years</span><span>40 years</span></div>
+  </div>
   <p class="sub" style="margin:18px 0 8px;font-weight:600;color:#334155">Optional monthly costs</p>
   <div class="row2">
     <div class="field"><label for="m_tax">Property tax <span class="hint">(/yr)</span></label>
@@ -52,15 +67,21 @@ TOOLS.append({
    var segs=[{label:'Principal & interest',value:pi,color:F.C.blue},{label:'Property tax',value:mTax,color:F.C.green},{label:'Home insurance',value:mIns,color:F.C.amber},{label:'HOA',value:hoa,color:F.C.violet}];
    var rows='',pP=0,pI=0,yr=0;
    am.schedule.forEach(function(s,i){pP+=s.principal;pI+=s.interest;if((i+1)%12===0||i===am.schedule.length-1){yr++;rows+='<tr><td>'+yr+'</td><td>'+F.money0(pP)+'</td><td>'+F.money0(pI)+'</td><td>'+F.money0(s.balance)+'</td></tr>';pP=0;pI=0;}});
-   out.innerHTML='<div class="sub">Estimated monthly payment</div><div class="big-num">'+F.money0(total)+'</div>'+
+   out.innerHTML='<div class="res-hero"><div class="res-label">Monthly Payment</div><div class="res-big">'+F.money0(total)+'</div>'+
+    '<div class="res-note">This is an approximate monthly repayment amount for your mortgage based on the given inputs.</div></div>'+
+    '<div class="kv"><span class="k">Total Interest Paid</span><span class="v">'+F.money0(am.totalInterest)+'</span></div>'+
+    '<div class="kv"><span class="k">Loan Amount</span><span class="v">'+F.money0(loan)+'</span></div>'+
+    '<div class="kv"><span class="k">Principal &amp; Interest</span><span class="v">'+F.money0(pi)+'/mo</span></div>'+
+    '<div class="kv"><span class="k">Total of Payments</span><span class="v">'+F.money0(pi*am.months)+'</span></div>'+
     '<div class="chart-row">'+F.donut(segs)+F.legend(segs)+'</div>'+
-    '<div class="stats"><div class="stat"><div class="k">Loan amount</div><div class="v">'+F.money0(loan)+'</div></div>'+
-    '<div class="stat"><div class="k">Total interest</div><div class="v">'+F.money0(am.totalInterest)+'</div></div>'+
-    '<div class="stat"><div class="k">Principal &amp; interest</div><div class="v">'+F.money0(pi)+'/mo</div></div>'+
-    '<div class="stat"><div class="k">Total of payments</div><div class="v">'+F.money0(pi*am.months)+'</div></div></div>'+
-    '<div class="tbl-wrap"><table><thead><tr><th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+    '<div class="tbl-wrap"><table><thead><tr><th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+    '<div class="res-cta"><h3>Ready to go deeper?</h3><p>See how extra payments, refinancing or a different budget change the picture.</p>'+
+    '<a class="btn block" href="/all/">Explore All Calculators</a></div>';
   }
-  F.on(ids,calc);calc();
+  F.on(ids,calc);
+  F.bindRange('m_price','m_price_r',calc);F.bindRange('m_down','m_down_r',calc);
+  F.bindRange('m_rate','m_rate_r',calc);F.bindRange('m_term','m_term_r',calc);
+  calc();
  });
  """,
  "intro_html":"""
@@ -88,12 +109,25 @@ TOOLS.append({
  "desc":"Free loan calculator: find your monthly payment, total interest and amortization schedule for any fixed-rate personal or installment loan.",
  "keywords":"loan calculator, monthly payment calculator, personal loan calculator, interest calculator",
  "body_html":"""
-  <div class="field"><label for="l_amt">Loan amount</label>
-    <div class="inp has-pre"><span class="pre">$</span><input id="l_amt" type="number" value="20000" min="0" step="500"></div></div>
-  <div class="field"><label for="l_rate">Interest rate (APR)</label>
-    <div class="inp has-suf"><input id="l_rate" type="number" value="9.5" min="0" step="0.01"><span class="suf">%</span></div></div>
-  <div class="field"><label for="l_term">Loan term <span class="hint">(years)</span></label>
-    <input id="l_term" type="number" value="5" min="0.25" max="40" step="0.25"></div>
+  <div class="sfield">
+    <div class="sf-top"><label for="l_amt">Loan amount</label>
+      <div class="sf-box"><div class="inp has-pre"><span class="pre">$</span><input id="l_amt" type="number" value="20000" min="0" step="500"></div></div></div>
+    <input type="range" class="sl" id="l_amt_r" min="1000" max="200000" step="500" value="20000" aria-label="Loan amount slider">
+    <div class="sl-scale"><span>$1,000</span><span>$200,000</span></div>
+    <div class="sf-hint">Enter the total amount you want to borrow</div>
+  </div>
+  <div class="sfield">
+    <div class="sf-top"><label for="l_rate">Interest rate (APR)</label>
+      <div class="sf-box"><div class="inp has-suf"><input id="l_rate" type="number" value="9.5" min="0" step="0.01"><span class="suf">%</span></div></div></div>
+    <input type="range" class="sl" id="l_rate_r" min="1" max="36" step="0.1" value="9.5" aria-label="Interest rate slider">
+    <div class="sl-scale"><span>1%</span><span>36%</span></div>
+  </div>
+  <div class="sfield">
+    <div class="sf-top"><label for="l_term">Loan term</label>
+      <div class="sf-box"><div class="inp has-suf"><input id="l_term" type="number" value="5" min="0.25" max="40" step="0.25"><span class="suf">yrs</span></div></div></div>
+    <input type="range" class="sl" id="l_term_r" min="1" max="30" step="0.5" value="5" aria-label="Loan term slider">
+    <div class="sl-scale"><span>1 year</span><span>30 years</span></div>
+  </div>
  """,
  "script_js":"""
  document.addEventListener('DOMContentLoaded',function(){var F=window.FIN;
@@ -106,13 +140,21 @@ TOOLS.append({
    var segs=[{label:'Principal',value:P,color:F.C.blue},{label:'Interest',value:am.totalInterest,color:F.C.amber}];
    var rows='',pP=0,pI=0,yr=0;
    am.schedule.forEach(function(s,i){pP+=s.principal;pI+=s.interest;if((i+1)%12===0||i===am.schedule.length-1){yr++;rows+='<tr><td>'+yr+'</td><td>'+F.money0(pP)+'</td><td>'+F.money0(pI)+'</td><td>'+F.money0(s.balance)+'</td></tr>';pP=0;pI=0;}});
-   out.innerHTML='<div class="sub">Monthly payment</div><div class="big-num">'+F.money0(pay)+'</div>'+
+   out.innerHTML='<div class="res-hero"><div class="res-label">Monthly Payment</div><div class="res-big">'+F.money(pay)+'</div>'+
+    '<div class="res-note">Fixed monthly repayment for this loan based on your amount, rate and term.</div></div>'+
+    '<div class="kv"><span class="k">Loan Amount</span><span class="v">'+F.money0(P)+'</span></div>'+
+    '<div class="kv"><span class="k">Total Interest</span><span class="v">'+F.money0(am.totalInterest)+'</span></div>'+
+    '<div class="kv"><span class="k">Total Repayment</span><span class="v">'+F.money0(am.totalPaid)+'</span></div>'+
+    '<div class="kv"><span class="k">Loan Term</span><span class="v">'+months+' months ('+(months/12).toFixed(1)+' yrs)</span></div>'+
+    '<div class="kv"><span class="k">Interest Rate</span><span class="v">'+rate+'% APR</span></div>'+
     '<div class="chart-row">'+F.donut(segs)+F.legend(segs)+'</div>'+
-    '<div class="stats"><div class="stat"><div class="k">Total interest</div><div class="v">'+F.money0(am.totalInterest)+'</div></div>'+
-    '<div class="stat"><div class="k">Total paid</div><div class="v">'+F.money0(am.totalPaid)+'</div></div></div>'+
-    '<div class="tbl-wrap"><table><thead><tr><th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+    '<div class="tbl-wrap"><table><thead><tr><th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+    '<div class="res-cta"><h3>Compare your options</h3><p>See how a different rate or term changes the total cost before you sign.</p>'+
+    '<a class="btn block" href="/all/">Explore All Calculators</a></div>';
   }
-  F.on(ids,calc);calc();
+  F.on(ids,calc);
+  F.bindRange('l_amt','l_amt_r',calc);F.bindRange('l_rate','l_rate_r',calc);F.bindRange('l_term','l_term_r',calc);
+  calc();
  });
  """,
  "intro_html":"""
