@@ -2,7 +2,7 @@
 
 _Last updated: July 29, 2026_
 
-CalcHub ("we", "us") is built to respect your privacy. This policy explains what is — and isn't — collected when you use the site, and the choices you have.
+TechShield Tools ("we", "us") is built to respect your privacy. This policy explains what is — and isn't — collected when you use the site, and the choices you have.
 
 **Calculations stay on your device.** Every calculator runs entirely in your browser using JavaScript. The numbers you enter (prices, incomes, dates, weights, and so on) are **never sent to us, stored, or shared**. We never see them.
 
@@ -23,7 +23,7 @@ A cookie is a small file stored by your browser. We use them in two categories:
 If advertising is enabled on this site:
 
 - Third-party vendors, including **Google**, use cookies to serve ads based on your prior visits to this and other websites.
-- Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to CalcHub and/or other sites on the Internet.
+- Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to TechShield Tools and/or other sites on the Internet.
 - You can opt out of personalized advertising by visiting **Google Ads Settings** (myadcenter.google.com). You can also opt out of many third-party vendors' use of cookies for personalized advertising at **aboutads.info** and **youronlinechoices.eu** (for the EU/UK).
 - We use **Google Consent Mode**, which means advertising and analytics storage stays disabled by default until you consent, and visitors in the EU, UK and other regions with consent requirements are asked before any such cookies are set.
 
@@ -37,7 +37,7 @@ If advertising is enabled on this site:
 
 ## Children's privacy
 
-CalcHub is a general-audience site and is not directed to children under 13 (or the minimum age in your country). We do not knowingly collect personal information from children.
+TechShield Tools is a general-audience site and is not directed to children under 13 (or the minimum age in your country). We do not knowingly collect personal information from children.
 
 ## Third-party links
 

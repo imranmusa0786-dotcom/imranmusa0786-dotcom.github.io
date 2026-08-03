@@ -1,6 +1,6 @@
-# About CalcHub
+# About TechShield Tools
 
-CalcHub is a free collection of online calculators and everyday tools, built to give clear, accurate answers to common money and life questions — without sign-ups, paywalls, or clutter.
+TechShield Tools is a free collection of online calculators and everyday tools, built to give clear, accurate answers to common money and life questions — without sign-ups, paywalls, or clutter.
 
 ## What we do
 
@@ -21,8 +21,8 @@ Every calculation runs entirely inside your own browser. The numbers you type ar
 
 ## Editorial independence and limitations
 
-CalcHub is independent. Our calculators and explanations are not sponsored by any lender, bank or product provider, and we do not tailor results to favor anyone.
+TechShield Tools is independent. Our calculators and explanations are not sponsored by any lender, bank or product provider, and we do not tailor results to favor anyone.
 
-CalcHub provides **general information and estimates for educational purposes only**, and not professional financial, medical, or legal advice. Real quotes and outcomes depend on your specific circumstances, so for major decisions we encourage you to confirm figures with a qualified professional. Please see our full [Disclaimer](/disclaimer/).
+TechShield Tools provides **general information and estimates for educational purposes only**, and not professional financial, medical, or legal advice. Real quotes and outcomes depend on your specific circumstances, so for major decisions we encourage you to confirm figures with a qualified professional. Please see our full [Disclaimer](/disclaimer/).
 
 Have a tool you'd like us to build, or a correction to suggest? We'd love to hear from you on the [Contact](/contact/) page.
