@@ -214,3 +214,10 @@ input[type=range].sl::-moz-range-thumb{width:19px;height:19px;border-radius:50%;
   .res-hero .res-big{font-size:33px}
   .sf-box{width:118px}
 }
+
+/* auto-slider + hero adaptations for all calculators */
+.auto-sl{margin:8px 0 6px}
+.field .sl-scale{margin-bottom:2px}
+.res-hero .sub{font-size:15.5px;font-weight:700;color:var(--ink);text-transform:none}
+.res-hero .big-num{color:var(--brand);font-size:38px;letter-spacing:-.9px;margin:3px 0 2px}
+@media(max-width:520px){.res-hero .big-num{font-size:31px}}

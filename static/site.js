@@ -154,3 +154,97 @@
     C: { blue: "#2563eb", green: "#16a34a", amber: "#f59e0b", red: "#dc2626", violet: "#7c3aed", slate: "#64748b" }
   };
 })(window);
+
+
+/* ---------- site-wide widget enhancer: auto-sliders, result hero, CTA ---------- */
+(function () {
+  "use strict";
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+  ready(function () {
+    var F = window.FIN; if (!F) return;
+
+    // ---- 1. auto-sliders under every numeric input in the inputs panel ----
+    function niceCeil(x) {
+      if (!(x > 0)) return 10;
+      var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10));
+      var m = x / p;
+      var n = m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10;
+      return n * p;
+    }
+    function fmtScale(v, pre, suf) {
+      var s = Math.abs(v) >= 1000 ? v.toLocaleString("en-US") : String(v);
+      var sf = suf || ""; if (sf.length > 1) sf = " " + sf;
+      return (pre || "") + s + sf;
+    }
+    var panel = document.querySelector(".calc-wrap .panel");
+    if (panel) {
+      var inputs = panel.querySelectorAll("input[type=number]");
+      Array.prototype.forEach.call(inputs, function (inp) {
+        if (inp.closest(".sfield") || inp.dataset.noslider) return;
+        var v = F.num(inp.value); if (!isFinite(v)) v = 0;
+        var min = inp.min !== "" ? F.num(inp.min) : 0;
+        var max = inp.max !== "" ? F.num(inp.max) : niceCeil((Math.abs(v) || 10) * 5);
+        if (!(max > min)) max = min + 10;
+        var step = (inp.step && inp.step !== "any") ? F.num(inp.step) : 1;
+        var wrap = inp.closest(".inp") || inp;
+        var pre = "", suf = "";
+        var preEl = inp.closest(".inp") && inp.closest(".inp").querySelector(".pre");
+        var sufEl = inp.closest(".inp") && inp.closest(".inp").querySelector(".suf");
+        if (preEl) pre = preEl.textContent.trim();
+        if (sufEl) suf = sufEl.textContent.trim();
+        var r = document.createElement("input");
+        r.type = "range"; r.className = "sl auto-sl";
+        r.min = min; r.max = max; r.step = step;
+        r.value = Math.min(Math.max(v, min), max);
+        r.setAttribute("aria-hidden", "true"); r.tabIndex = -1;
+        var scale = document.createElement("div");
+        scale.className = "sl-scale";
+        scale.innerHTML = "<span>" + fmtScale(min, pre, suf) + "</span><span>" + fmtScale(max, pre, suf) + "</span>";
+        wrap.parentNode.insertBefore(r, wrap.nextSibling);
+        r.parentNode.insertBefore(scale, r.nextSibling);
+        function paint() {
+          var f = ((F.num(r.value) - min) / (max - min)) * 100;
+          r.style.setProperty("--fill", F.clamp(f, 0, 100) + "%");
+        }
+        r.addEventListener("input", function () {
+          inp.value = r.value; paint();
+          inp.dispatchEvent(new Event("input", { bubbles: true }));
+        });
+        inp.addEventListener("input", function () {
+          var nv = F.num(inp.value);
+          if (isFinite(nv)) r.value = F.clamp(nv, min, max);
+          paint();
+        });
+        paint();
+      });
+    }
+
+    // ---- 2. result hero + CTA on every calculator render ----
+    var out = document.getElementById("out");
+    if (!out) return;
+    function heroize() {
+      var first = out.firstElementChild;
+      if (first && first.classList.contains("sub") &&
+          first.nextElementSibling && first.nextElementSibling.classList.contains("big-num") &&
+          !out.querySelector(":scope > .res-hero")) {
+        var big = first.nextElementSibling;
+        var hero = document.createElement("div");
+        hero.className = "res-hero";
+        out.insertBefore(hero, first);
+        hero.appendChild(first); hero.appendChild(big);
+      }
+      if (out.querySelector(".big-num, .res-big") && !out.querySelector(".res-cta")) {
+        var cta = document.createElement("div");
+        cta.className = "res-cta";
+        cta.innerHTML = "<h3>Keep planning</h3><p>Try our other free money and everyday tools \u2014 no sign-up needed.</p>" +
+          "<a class=\"btn block\" href=\"/all/\">Explore All Calculators</a>";
+        out.appendChild(cta);
+      }
+    }
+    new MutationObserver(heroize).observe(out, { childList: true });
+    heroize();
+  });
+})();
