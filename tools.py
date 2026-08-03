@@ -503,9 +503,9 @@ TOOLS.append({
  "name":"Tip Calculator",
  "short":"Calculate the tip and split the bill between any number of people.",
  "lede":"Quickly calculate a tip and split the total between friends. Choose a tip percentage and the number of people to see the amount each person owes.",
- "title":"Tip Calculator — Gratuity & Bill Split",
- "desc":"Free tip calculator: work out gratuity at any percentage and split the bill evenly between any number of people.",
- "keywords":"tip calculator, gratuity calculator, bill split calculator",
+ "title":"Tip Calculator — What Is a Good Tip Percentage?",
+ "desc":"Free tip calculator: see how much to tip in seconds and split the bill. Includes a good-tip-percentage guide for restaurants, delivery, bars and more.",
+ "keywords":"tip calculator, what is a good tip percentage, how much to tip, gratuity calculator, bill split calculator",
  "body_html":"""
   <div class="field"><label for="t_bill">Bill amount</label>
     <div class="inp has-pre"><span class="pre">$</span><input id="t_bill" type="number" value="80" min="0" step="1"></div></div>
@@ -532,13 +532,65 @@ TOOLS.append({
  });
  """,
  "intro_html":"""
-  <h2>How much should you tip?</h2>
-  <p>In the United States, tipping 15–20% of the pre-tax bill is standard for table service, with 18–20% common for good service. This calculator lets you pick any percentage, adds it to the bill, and splits the total evenly between however many people are dining.</p>
-  <p>Enter the bill, tap a quick tip button (or type your own percentage), and set the number of people to instantly see the tip, the grand total, and what each person owes.</p>
+  <h2>What is a good tip percentage?</h2>
+  <p>A good tip for sit-down restaurant service in the United States is <strong>18–20% of the pre-tax bill</strong>. 15% is the acceptable baseline for adequate service, 18% is the everyday standard, 20% signals good service, and 22–25% rewards exceptional service or a large, demanding table. This calculator applies whatever percentage you choose, adds it to the bill, and splits the total evenly between any number of people.</p>
+  <p>Enter the bill, tap a quick tip button (or type your own percentage), and set the number of people to instantly see the tip amount, the grand total, and what each person owes.</p>
+
+  <h2>How much to tip by service type</h2>
+  <p>Tipping norms differ a lot by situation. Here are the customary U.S. ranges:</p>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Service</th><th>Customary tip</th></tr></thead>
+   <tbody>
+    <tr><td>Sit-down restaurant</td><td>18–20% (15% minimum)</td></tr>
+    <tr><td>Exceptional service / large group</td><td>22–25%</td></tr>
+    <tr><td>Buffet</td><td>10%</td></tr>
+    <tr><td>Takeout / counter pickup</td><td>0–10%, optional</td></tr>
+    <tr><td>Food delivery</td><td>15–20%, at least $3–5</td></tr>
+    <tr><td>Bartender</td><td>$1–2 per drink, or 15–20% of the tab</td></tr>
+    <tr><td>Coffee shop</td><td>Optional — spare change to $1+</td></tr>
+    <tr><td>Hairdresser / barber</td><td>15–20%</td></tr>
+    <tr><td>Taxi / ride-share</td><td>10–15%</td></tr>
+    <tr><td>Hotel housekeeping</td><td>$2–5 per night</td></tr>
+    <tr><td>Bellhop</td><td>$1–2 per bag</td></tr>
+    <tr><td>Valet</td><td>$2–5 when your car is returned</td></tr>
+   </tbody>
+  </table></div>
+
+  <h3>Worked examples</h3>
+  <p>On a <strong>$50 dinner bill</strong>, an 18% tip is $9, bringing the total to $59. On an <strong>$80 bill</strong> with a 20% tip, the tip is $16 and the total is $96 — split between two people, each pays $48. On a <strong>$120 bill</strong> at 15%, the tip is $18 and the total is $138.</p>
+
+  <h2>Quick mental math for tipping</h2>
+  <p>You don&rsquo;t need a phone out at the table (though this page works great on one). Two tricks cover almost every case: for <strong>20%</strong>, move the decimal one place left and double it — on $64, that&rsquo;s $6.40 × 2 = $12.80. For <strong>15%</strong>, take 10% and add half of it again — on $64, $6.40 + $3.20 = $9.60. For 18%, aim between the two.</p>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Bill</th><th>15%</th><th>18%</th><th>20%</th><th>25%</th></tr></thead>
+   <tbody>
+    <tr><td>$20</td><td>$3.00</td><td>$3.60</td><td>$4.00</td><td>$5.00</td></tr>
+    <tr><td>$50</td><td>$7.50</td><td>$9.00</td><td>$10.00</td><td>$12.50</td></tr>
+    <tr><td>$100</td><td>$15.00</td><td>$18.00</td><td>$20.00</td><td>$25.00</td></tr>
+    <tr><td>$200</td><td>$30.00</td><td>$36.00</td><td>$40.00</td><td>$50.00</td></tr>
+   </tbody>
+  </table></div>
+
+  <h2>Do you tip on the pre-tax or post-tax amount?</h2>
+  <p>Etiquette guides agree the tip is customarily calculated on the <strong>pre-tax subtotal</strong> — the cost of the food and drinks, not the government&rsquo;s share. In practice many people tip on the final total because it&rsquo;s the number at the bottom of the receipt; that&rsquo;s slightly more generous, and nobody will object. If a restaurant has already added a service charge or &ldquo;auto-gratuity&rdquo; (common for parties of 6+), you are not expected to tip again on top of it.</p>
+
+  <h2>Tipping outside the United States</h2>
+  <p>The 15–20% norm is largely a U.S. and Canada convention. In the <strong>UK</strong>, 10–12.5% is typical and often appears on the bill as a service charge. Across much of <strong>Europe</strong>, service is included and rounding up or leaving 5–10% is a courtesy, not an obligation. In <strong>Japan, South Korea and China</strong>, tipping is not customary and can even cause confusion. In <strong>Australia and New Zealand</strong>, tipping is appreciated for great service but entirely optional. When traveling, a quick local check beats applying U.S. rules abroad.</p>
+
+  <h2>When is it okay to tip less?</h2>
+  <p>Tipping less — say 10% — is a recognized signal of poor service, but consider whether the problem was the server&rsquo;s fault: slow food is usually a kitchen issue, and a packed section means the server is stretched thin. If something genuinely went wrong, mentioning it to a manager helps more than a small tip alone. In the U.S., many servers are paid a sub-minimum &ldquo;tipped wage,&rdquo; so tips are a real part of their income rather than a bonus.</p>
  """,
  "faqs":[
-  {"q":"Should I tip on the pre-tax or post-tax total?","a":"Customarily, tips are based on the pre-tax bill amount, though many people simply tip on the total for convenience. Enter whichever bill figure you prefer."},
-  {"q":"What's a standard tip percentage?","a":"For sit-down restaurant service in the U.S., 15% is a baseline, 18–20% reflects good service, and 20%+ is generous. Norms differ by country and service type."},
+  {"q":"What is a good tip percentage?","a":"18–20% of the pre-tax bill is a good tip for sit-down restaurant service in the U.S. 15% is the acceptable baseline, and 22–25% rewards exceptional service. Norms differ for delivery, bars, salons and other services."},
+  {"q":"Should I tip on the pre-tax or post-tax total?","a":"Customarily, tips are based on the pre-tax bill amount, though many people simply tip on the total for convenience — that's slightly more generous. Enter whichever bill figure you prefer."},
+  {"q":"Is 15% still an acceptable tip?","a":"Yes — 15% remains the acceptable baseline for adequate table service in the U.S., though 18–20% has become the everyday standard, especially in larger cities."},
+  {"q":"How much should I tip on a $100 bill?","a":"On a $100 bill: $15 at 15%, $18 at 18%, $20 at 20%, and $25 at 25%. An 18–20% tip ($18–20) is the standard range for good restaurant service."},
+  {"q":"Is 10% a bad tip?","a":"At a U.S. sit-down restaurant, 10% is below the customary range and generally reads as a signal of poor service. For buffets or taxis, however, 10% is within the normal range."},
+  {"q":"How much should you tip for food delivery?","a":"15–20% of the order, with a $3–5 minimum even on small orders. Consider tipping more in bad weather or for long-distance deliveries. Note that a 'delivery fee' on the receipt usually does not go to the driver."},
+  {"q":"Do you tip for takeout?","a":"Tipping on takeout is optional. Many people tip nothing or round up; 5–10% is a kind gesture for large or complicated orders that took real time to pack."},
+  {"q":"Should I tip in cash or on the card?","a":"Either is fine. Cash tips reach the server immediately and are preferred by many; card tips are pooled or paid out through payroll depending on the restaurant's policy."},
+  {"q":"What if a service charge is already on the bill?","a":"If the restaurant added an automatic service charge or gratuity (common for parties of 6 or more), you are not expected to tip again — though some guests add a little extra for outstanding service."},
+  {"q":"How does the bill split work in this calculator?","a":"The calculator adds your chosen tip percentage to the bill, then divides the grand total evenly by the number of people, showing each person's share and the tip per person."},
  ],
 })
 
