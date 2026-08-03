@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Tool definitions for CalcHub. Each tool is fully self-contained:
+"""Tool definitions for TechShield Tools. Each tool is fully self-contained:
 UI (body_html), inline calculator logic (script_js), SEO copy and FAQs.
 Phase 2/3 tools slot in by appending dicts to TOOLS."""
 

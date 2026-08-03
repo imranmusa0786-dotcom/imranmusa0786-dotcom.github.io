@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build CalcHub — static calculators site. No server, no API, no cost."""
+"""Build TechShield Tools — static calculators site. No server, no API, no cost."""
 import json, pathlib, shutil, datetime, html
 import yaml, markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -112,10 +112,10 @@ def main():
 
     # static info pages
     metas = {
-        "about": ("About " + SITE["name"], "About CalcHub — free, accurate, private calculators and tools for money and everyday life."),
-        "contact": ("Contact — " + SITE["name"], "Contact CalcHub with feedback, corrections, or calculator suggestions."),
-        "privacy": ("Privacy Policy — " + SITE["name"], "CalcHub privacy policy. Calculations run in your browser; your numbers are never sent or stored."),
-        "disclaimer": ("Disclaimer — " + SITE["name"], "CalcHub disclaimer. Calculators provide general estimates for educational purposes, not professional advice."),
+        "about": ("About " + SITE["name"], "About TechShield Tools — free, accurate, private calculators and tools for money and everyday life."),
+        "contact": ("Contact — " + SITE["name"], "Contact TechShield Tools with feedback, corrections, or calculator suggestions."),
+        "privacy": ("Privacy Policy — " + SITE["name"], "TechShield Tools privacy policy. Calculations run in your browser; your numbers are never sent or stored."),
+        "disclaimer": ("Disclaimer — " + SITE["name"], "TechShield Tools disclaimer. Calculators provide general estimates for educational purposes, not professional advice."),
     }
     pages_urls = []
     for slug, (ttl, dsc) in metas.items():
