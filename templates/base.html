@@ -7,7 +7,7 @@
 <script>
 /* Google Consent Mode v2 — default denied until the visitor chooses. Reads a remembered choice. */
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-(function(){var c=null;try{c=JSON.parse(localStorage.getItem('calchub_consent')||'null');}catch(e){}
+(function(){var c=null;try{c=JSON.parse(localStorage.getItem('tstools_consent')||'null');}catch(e){}
  var ad=(c&&c.ads)?'granted':'denied',an=(c&&c.analytics)?'granted':'denied';
  gtag('consent','default',{ad_storage:ad,ad_user_data:ad,ad_personalization:ad,analytics_storage:an,wait_for_update:500});})();
 </script>
@@ -33,7 +33,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
 </head>
 <body>
 <header class="site-head"><div class="head-in">
-  <a class="brand" href="/"><span class="logo">₵</span>{{ site.name }}</a>
+  <a class="brand" href="/"><span class="logo">TS</span>{{ site.name }}</a>
   <nav id="nav">
     <a href="/#finance">Financial</a>
     <a href="/#utility">Everyday Tools</a>
@@ -80,7 +80,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
   </div>
 </div>
 <script>
-(function(){var K='calchub_consent',b=document.getElementById('ccBanner');
+(function(){var K='tstools_consent',b=document.getElementById('ccBanner');
  function save(o){try{localStorage.setItem(K,JSON.stringify(o));}catch(e){}}
  function upd(o){if(window.gtag){gtag('consent','update',{ad_storage:o.ads?'granted':'denied',ad_user_data:o.ads?'granted':'denied',ad_personalization:o.ads?'granted':'denied',analytics_storage:o.analytics?'granted':'denied'});}}
  var cur=null;try{cur=JSON.parse(localStorage.getItem(K)||'null');}catch(e){}
