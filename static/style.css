@@ -181,3 +181,36 @@ tbody tr:nth-child(even){background:#fafbfd}
   .donut{width:150px;height:150px}
   .legend{min-width:0}
 }
+
+/* ---------- widget UI: sliders + result panel ---------- */
+.sfield{margin-bottom:20px}
+.sf-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.sf-top label{font-weight:700;font-size:15px;color:var(--ink)}
+.sf-box{width:132px;flex:none}
+.sf-box .inp{margin:0}
+.sf-box input[type=number]{padding:9px 10px;font-weight:700;text-align:right}
+.sf-box .has-suf input{padding-right:38px}
+.sf-box .has-pre input{padding-left:24px}
+input[type=range].sl{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;border:none;padding:0;
+  background:linear-gradient(to right,var(--brand) var(--fill,50%),#e2e8f0 var(--fill,50%));outline:none;margin:6px 0 7px;cursor:pointer}
+input[type=range].sl::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
+  background:#fff;border:2px solid #d6deea;box-shadow:0 1px 5px rgba(16,24,40,.3);cursor:pointer}
+input[type=range].sl::-moz-range-thumb{width:19px;height:19px;border-radius:50%;background:#fff;border:2px solid #d6deea;box-shadow:0 1px 5px rgba(16,24,40,.3);cursor:pointer}
+.sl-scale{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.sf-hint{font-size:13px;color:var(--muted);margin-top:6px}
+.res-hero{background:#e8f0fd;border:1px solid #d6e4fb;border-radius:14px;padding:18px 20px;text-align:center;margin-bottom:16px}
+.res-hero .res-label{font-size:15.5px;font-weight:700;color:var(--ink)}
+.res-hero .res-big{font-size:40px;font-weight:800;letter-spacing:-1px;color:var(--brand);margin:2px 0 6px}
+.res-hero .res-note{font-size:13px;color:var(--muted);line-height:1.5;max-width:340px;margin:0 auto}
+.kv{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:9px 2px;border-bottom:1px solid var(--line);font-size:15px}
+.kv:last-of-type{border-bottom:none}
+.kv .k{font-weight:600;color:var(--ink)}
+.kv .v{font-weight:800;color:var(--ink);white-space:nowrap}
+.res-cta{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:16px}
+.res-cta h3{margin:0 0 5px;font-size:18px}
+.res-cta p{font-size:14px;color:var(--muted);margin:0 0 12px}
+.btn.block{display:block;width:100%;text-align:center;font-weight:700;font-size:15px;padding:13px 18px}
+@media(max-width:520px){
+  .res-hero .res-big{font-size:33px}
+  .sf-box{width:118px}
+}

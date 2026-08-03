@@ -26,6 +26,25 @@
   function pct(x, dp) { dp = dp == null ? 2 : dp; return isFinite(x) ? x.toFixed(dp) + "%" : "—"; }
   function nfmt(x, dp) { dp = dp == null ? 2 : dp; return isFinite(x) ? x.toLocaleString("en-US", { maximumFractionDigits: dp }) : "—"; }
 
+
+  // Sync a number input with a range slider (painted fill) — used by widget-style calculators.
+  function bindRange(numId, rngId, recalc) {
+    var n = el(numId), r = el(rngId);
+    if (!n || !r) return;
+    function paint() {
+      var min = num(r.min) || 0, max = num(r.max) || 100, v = num(r.value) || 0;
+      var f = max > min ? ((v - min) / (max - min)) * 100 : 0;
+      r.style.setProperty("--fill", clamp(f, 0, 100) + "%");
+    }
+    r.addEventListener("input", function () { n.value = r.value; paint(); if (recalc) recalc(); });
+    n.addEventListener("input", function () {
+      var v = num(n.value);
+      if (isFinite(v)) r.value = clamp(v, num(r.min), num(r.max));
+      paint();
+    });
+    paint();
+  }
+
   // ---------- core finance ----------
   // Monthly payment for a fully-amortizing loan.
   function pmt(principal, annualRatePct, months) {
@@ -131,7 +150,7 @@
     num: num, clamp: clamp, money: money, money0: money0, pct: pct, nfmt: nfmt,
     pmt: pmt, amortize: amortize, principalFromPayment: principalFromPayment,
     futureValue: futureValue, contributionFor: contributionFor,
-    donut: donut, legend: legend, el: el, on: on,
+    donut: donut, legend: legend, el: el, on: on, bindRange: bindRange,
     C: { blue: "#2563eb", green: "#16a34a", amber: "#f59e0b", red: "#dc2626", violet: "#7c3aed", slate: "#64748b" }
   };
 })(window);
