@@ -1,4 +1,4 @@
-/* CalcHub shared engine — finance math, formatting, and a dependency-free chart.
+/* TechShield Tools shared engine — finance math, formatting, and a dependency-free chart.
    All money math lives here so it's consistent and testable. */
 (function (root) {
   "use strict";
