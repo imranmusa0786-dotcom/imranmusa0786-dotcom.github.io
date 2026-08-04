@@ -374,8 +374,8 @@ TOOLS.append({
  "short":"Find out how much to save each month to hit a target by a set date.",
  "lede":"Set a savings goal and find out exactly how much to put away each month to reach it — accounting for interest earned along the way.",
  "title":"Savings Goal Calculator — How Much to Save Each Month",
- "desc":"Free savings goal calculator: find the monthly amount needed to reach a target by a certain date, including interest earned on your balance.",
- "keywords":"savings goal calculator, how much to save, savings calculator",
+ "desc":"How much money should you save a month? This free savings goal calculator finds the exact monthly amount to reach any target by a set date, including interest earned.",
+ "keywords":"savings goal calculator, how much money should i save a month calculator, how much to save each month, savings calculator, monthly savings calculator",
  "body_html":"""
   <div class="field"><label for="s_goal">Savings goal</label>
     <div class="inp has-pre"><span class="pre">$</span><input id="s_goal" type="number" value="30000" min="0" step="500"></div></div>
@@ -410,14 +410,47 @@ TOOLS.append({
  });
  """,
  "intro_html":"""
-  <h2>Plan your savings goal</h2>
-  <p>Whether you're building an emergency fund, saving a house deposit, or planning a big purchase, this calculator tells you the monthly amount needed to hit your target on time. It accounts for the interest your balance earns along the way, so the required contribution is a little lower than simply dividing the goal by the number of months.</p>
-  <h3>How it's calculated</h3>
-  <p>We solve the future-value formula for the monthly contribution: the goal must equal your current balance grown at interest, plus the future value of each monthly deposit. A higher interest rate or a longer timeframe both reduce how much you need to set aside each month.</p>
+  <h2>How much money should you save a month?</h2>
+  <p>The honest answer is: enough to hit your specific goal by your specific deadline. This calculator works that out exactly. Enter your target amount, when you need it, anything you&rsquo;ve already saved, and the interest rate you&rsquo;ll earn &mdash; and it returns the precise monthly amount to put aside. Because your balance earns interest along the way, the required contribution is a little lower than simply dividing the goal by the number of months.</p>
+  <h3>How it&rsquo;s calculated</h3>
+  <p>We solve the future-value formula for the monthly contribution: your goal must equal your current balance grown at interest, plus the future value of each monthly deposit. A higher interest rate or a longer timeframe both reduce how much you need to set aside each month.</p>
+
+  <h2>A simple starting point: the 20% guideline</h2>
+  <p>If you don&rsquo;t have a specific target yet and just want a healthy monthly savings habit, the widely used <strong>50/30/20 rule</strong> suggests saving <strong>20% of your take-home pay</strong> &mdash; split across your emergency fund, retirement, and other goals. On a $4,000 monthly paycheck that&rsquo;s $800 a month. Use the <a href="/budget-calculator/">budget calculator</a> to see how that fits alongside your needs and wants. But a named goal with a deadline, priced out below, is far more motivating than a vague percentage.</p>
+
+  <h2>Worked example: a $15,000 emergency fund</h2>
+  <p>An emergency fund of three to six months&rsquo; expenses is the foundation of any savings plan. Say your target is <strong>$15,000</strong>, saved in a high-yield account earning about 4%:</p>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Timeframe</th><th>Save per month</th></tr></thead>
+   <tbody>
+    <tr><td>1 year</td><td>$1,227</td></tr>
+    <tr><td>2 years</td><td>$601</td></tr>
+    <tr><td>3 years</td><td>$393</td></tr>
+   </tbody>
+  </table></div>
+  <p>Doubling the timeframe roughly halves the monthly amount &mdash; which is the single most powerful lever you control. If $1,227/month feels impossible, a two- or three-year plan turns the same goal into a comfortable habit.</p>
+
+  <h2>Worked example: a house deposit</h2>
+  <p>Saving a <strong>$60,000 down payment in 5 years</strong> at 4% needs about <strong>$905 a month</strong> from a standing start. But if you already have <strong>$10,000</strong> put aside, that head start (plus the interest it earns) drops the requirement to about <strong>$721 a month</strong> &mdash; $184 less, every month, just from money already working for you. That&rsquo;s why the &ldquo;current savings&rdquo; field matters. When you&rsquo;re ready to buy, the <a href="/mortgage-calculator/">mortgage calculator</a> and <a href="/house-affordability-calculator/">home affordability calculator</a> take it from there.</p>
+
+  <h2>Why the interest rate matters more over time</h2>
+  <p>For short goals, interest barely moves the number &mdash; saving $10,000 in two years needs $401/month at 4% versus $417 at 0%, a trivial difference. Over longer horizons it compounds into real money. To reach <strong>$30,000 in 10 years</strong>, you&rsquo;d contribute $250/month at 0% but only <strong>$193/month at 5%</strong> &mdash; the account&rsquo;s growth covers nearly <strong>$6,800</strong> of the goal for you. The lesson: for goals more than a few years out, <em>where</em> you keep the money is almost as important as how much you add. See the <a href="/compound-interest-calculator/">compound interest calculator</a> for the full picture.</p>
+
+  <h2>Where to keep the money</h2>
+  <p>Match the account to the timeframe. For goals within <strong>1&ndash;3 years</strong> &mdash; emergency fund, a wedding, a car &mdash; use a <strong>high-yield savings account, money-market fund, or short CD</strong>, where the balance is safe and liquid. For goals <strong>5+ years out</strong>, some people accept market risk for higher expected returns, but that&rsquo;s a personal call and money you might need soon shouldn&rsquo;t be exposed to a downturn. Enter the account&rsquo;s <strong>APY</strong> in the rate field for the most accurate result.</p>
+
+  <h2>What to do if the monthly amount is too high</h2>
+  <p>Three levers, in order of impact: <strong>extend the deadline</strong> (the most powerful &mdash; more months means smaller payments and more interest), <strong>add to your starting balance</strong> if you can free up a lump sum, or <strong>trim the goal</strong> to what&rsquo;s truly needed. Even a few extra months can turn an unaffordable target into a realistic one &mdash; adjust the timeframe slider above and watch the monthly amount fall.</p>
  """,
  "faqs":[
-  {"q":"What rate should I enter?","a":"Use the APY of where you'll keep the money — for example a high-yield savings account or money-market fund for short-term goals. For very short timeframes, interest makes little difference, so you can even enter 0%."},
-  {"q":"What if I can't afford the monthly amount?","a":"Extend the timeframe, lower the goal, or increase your starting balance. Small changes to the time to goal can significantly reduce the monthly amount required."},
+  {"q":"How much money should I save a month?","a":"Enough to reach your specific goal by your deadline — this calculator gives the exact figure. Without a specific goal, a common guideline is 20% of take-home pay, split across your emergency fund, retirement and other targets."},
+  {"q":"How much should I save for an emergency fund?","a":"Aim for three to six months of essential expenses. For a $15,000 fund at 4% interest, that's about $601/month over two years or $393/month over three — pick the timeframe that fits your budget."},
+  {"q":"What interest rate should I enter?","a":"Use the APY of where you'll keep the money — a high-yield savings account or money-market fund for short-term goals. For very short timeframes interest makes little difference, so you can even enter 0%."},
+  {"q":"What if I can't afford the monthly amount?","a":"Extend the timeframe (the biggest lever), increase your starting balance, or lower the goal. Even a few extra months can meaningfully reduce the monthly amount required."},
+  {"q":"Does my current savings really change the number that much?","a":"Yes. A $10,000 head start on a $60,000, 5-year goal cuts the required monthly amount from about $905 to $721 — because that money keeps earning interest the whole time."},
+  {"q":"Is it better to save weekly or monthly?","a":"The total matters more than the frequency. Saving weekly can help if you're paid weekly and it keeps money out of your checking account, but a monthly automatic transfer on payday is the simplest reliable system for most people."},
+  {"q":"Should I save or pay off debt first?","a":"Build a small starter emergency fund (say $1,000) first, then focus on high-interest debt like credit cards — paying off a 20% card beats almost any savings rate. After that, save and invest in earnest. The debt payoff calculator can help you plan."},
+  {"q":"Where does the calculation come from?","a":"It solves the standard future-value-of-an-annuity formula for the monthly contribution, factoring in your starting balance and the interest earned each month. All math runs privately in your browser."},
  ],
 })
 
