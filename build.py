@@ -112,6 +112,7 @@ def main():
 
     # static info pages
     metas = {
+        "financial-calculators": ("Financial Calculators — The Complete Guide | " + SITE["name"], "Every free financial calculator explained: mortgages, loans, debt payoff, compound interest, retirement and more — and how to combine them for big money decisions."),
         "about": ("About " + SITE["name"], "About TechShield Tools — free, accurate, private calculators and tools for money and everyday life."),
         "contact": ("Contact — " + SITE["name"], "Contact TechShield Tools with feedback, corrections, or calculator suggestions."),
         "privacy": ("Privacy Policy — " + SITE["name"], "TechShield Tools privacy policy. Calculations run in your browser; your numbers are never sent or stored."),

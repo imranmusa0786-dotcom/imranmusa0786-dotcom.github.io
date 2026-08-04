@@ -86,17 +86,44 @@ TOOLS.append({
  """,
  "intro_html":"""
   <h2>How the mortgage calculator works</h2>
-  <p>Your monthly mortgage payment has two core parts — <strong>principal</strong> (the loan balance you pay down) and <strong>interest</strong> (the cost of borrowing) — often shown together as “P&amp;I”. Lenders usually also collect <strong>property tax</strong> and <strong>homeowners insurance</strong> monthly, and this is called your <strong>PITI</strong> payment. This calculator adds optional tax, insurance and HOA on top of P&amp;I so you see the true monthly cost.</p>
+  <p>Your monthly mortgage payment has two core parts &mdash; <strong>principal</strong> (the loan balance you pay down) and <strong>interest</strong> (the cost of borrowing) &mdash; shown together as &ldquo;P&amp;I&rdquo;. Lenders usually also collect <strong>property tax</strong> and <strong>homeowners insurance</strong> monthly, making up your <strong>PITI</strong> payment. This calculator adds optional tax, insurance and HOA on top of P&amp;I so you see the true monthly cost of owning the home, not just the loan.</p>
   <h3>The formula</h3>
-  <p>Monthly principal &amp; interest is calculated with the standard amortization formula: <code>M = P · r · (1+r)ⁿ / ((1+r)ⁿ − 1)</code>, where <code>P</code> is the loan amount, <code>r</code> is the monthly interest rate (annual rate ÷ 12), and <code>n</code> is the number of monthly payments (years × 12).</p>
-  <h3>Tips to lower your payment</h3>
-  <p>A larger down payment reduces the loan amount and can remove private mortgage insurance. A lower interest rate or a longer term reduces the monthly payment (though a longer term means more total interest). Use the year-by-year table to see how much faster you build equity over time.</p>
+  <p>Monthly principal &amp; interest uses the standard amortization formula: <code>M = P &middot; r &middot; (1+r)&#8319; / ((1+r)&#8319; &minus; 1)</code>, where <code>P</code> is the loan amount, <code>r</code> is the monthly interest rate (annual rate &divide; 12), and <code>n</code> is the number of monthly payments (years &times; 12).</p>
+
+  <h2>Worked example: a $400,000 home</h2>
+  <p>Say you buy a <strong>$400,000 home with $80,000 down</strong> (20%) on a 30-year loan at 6.5%. Your loan amount is $320,000 and the principal &amp; interest payment works out to <strong>$2,023 a month</strong>. Add typical escrow costs &mdash; $400/month property tax and $150/month insurance &mdash; and the real monthly bill is about <strong>$2,573</strong>. Over 30 years you&rsquo;d pay roughly <strong>$408,000 in interest</strong> on top of the amount borrowed &mdash; which is why the rate and the term matter so much.</p>
+
+  <h2>15-year vs 30-year: what the term really costs</h2>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Term</th><th>Monthly P&amp;I</th><th>Total interest</th></tr></thead>
+   <tbody>
+    <tr><td>30 years</td><td>$2,023</td><td>$408,142</td></tr>
+    <tr><td>15 years</td><td>$2,788</td><td>$181,758</td></tr>
+   </tbody>
+  </table></div>
+  <p>On the same $320,000 loan at 6.5%, the 15-year term costs <strong>$765 more per month</strong> but saves about <strong>$226,000 in interest</strong>. If the higher payment fits comfortably, a shorter term is one of the most powerful money moves available. If it would stretch you thin, take the 30-year and make extra payments when you can &mdash; flexibility without the obligation.</p>
+
+  <h2>How much house can you afford?</h2>
+  <p>A common guideline is the <strong>28/36 rule</strong>: housing costs under 28% of gross monthly income, and all debt payments combined under 36%. On a $9,000/month income that caps housing near $2,520/month. Work it backwards with our <a href="/house-affordability-calculator/">home affordability calculator</a>, and if you&rsquo;re weighing buying against renting, the <a href="/rent-vs-buy-calculator/">rent vs. buy calculator</a> compares the two over time.</p>
+
+  <h2>Down payment and PMI</h2>
+  <p>Put down <strong>less than 20%</strong> and most conventional lenders add <strong>private mortgage insurance (PMI)</strong> &mdash; typically 0.3&ndash;1.5% of the loan per year &mdash; until you reach about 20% equity. A bigger down payment shrinks the loan, may remove PMI entirely, and often earns a slightly better rate. That said, don&rsquo;t drain your emergency fund to hit 20%; PMI eventually drops off, but an empty savings account is a risk every single month.</p>
+
+  <h2>Extra payments: small amounts, big effect</h2>
+  <p>Adding <strong>$200/month</strong> to the example loan pays it off in about <strong>23.5 years instead of 30</strong> and cuts total interest to roughly $303,000 &mdash; a saving of over <strong>$105,000</strong>. Extra payments go entirely toward principal, so every future interest charge is calculated on a smaller balance. If rates have fallen since you bought, also check the <a href="/refinance-calculator/">refinance calculator</a>.</p>
+
+  <h2>Ways to lower your monthly payment</h2>
+  <p>The levers, in rough order of impact: borrow less (bigger down payment or a cheaper home), get a lower rate (shop at least three lenders &mdash; quotes vary more than people expect, and your credit score drives the offer), stretch the term (lowers the payment but raises lifetime interest), buy discount points if you&rsquo;ll keep the loan long enough to break even, and appeal an inflated property-tax assessment.</p>
  """,
  "faqs":[
-  {"q":"What is included in a monthly mortgage payment?","a":"Principal, interest, and usually property taxes and homeowners insurance (together called PITI). If you have a condo or planned community you may also pay HOA dues. This calculator lets you include all of them."},
-  {"q":"How much house can I afford?","a":"A common guideline is that your total monthly housing payment stays under about 28% of your gross monthly income, and total debts under about 36%. Try different home prices and down payments here to find a comfortable payment."},
-  {"q":"Does a bigger down payment reduce my payment?","a":"Yes. A larger down payment lowers the loan amount, which lowers both your monthly principal &amp; interest and the total interest paid. Putting down 20% or more also typically removes the need for private mortgage insurance (PMI)."},
-  {"q":"Is this the same as what a lender will quote?","a":"It's a close estimate for planning. Actual quotes depend on your credit, loan type, PMI, points, and exact tax and insurance figures, so treat this as a guide rather than an official offer."},
+  {"q":"What's the monthly payment on a $300,000 mortgage?","a":"At 6.5% over 30 years, principal and interest on a $300,000 loan is about $1,896 a month. Property tax, insurance and any PMI or HOA come on top — enter your figures above to see the full payment."},
+  {"q":"What is PITI?","a":"Principal, Interest, Taxes and Insurance — the four parts of a typical monthly mortgage payment. Lenders collect tax and insurance into an escrow account and pay those bills for you."},
+  {"q":"Do I need a 20% down payment?","a":"No. Many buyers put down far less — conventional loans allow 3–5% and FHA 3.5%. Below 20% you'll usually pay PMI until you reach about 20% equity, which is worth factoring into the monthly cost."},
+  {"q":"Is a 15-year or 30-year mortgage better?","a":"A 15-year saves enormous interest (about $226,000 on a $320,000 loan at 6.5%) but the payment is much higher. A 30-year keeps payments manageable and you can still pay it off early with extra payments. Choose the shortest term you can afford comfortably."},
+  {"q":"How much income do I need for this payment?","a":"By the 28% guideline, gross monthly income should be at least 3.6× the full housing payment. A $2,573/month payment suggests an income around $9,200/month (roughly $110,000/year)."},
+  {"q":"Do extra payments really help?","a":"Yes — extra payments go straight to principal. An extra $200/month on a $320,000, 6.5% loan pays it off 6.5 years early and saves over $100,000 in interest."},
+  {"q":"Why is my lender's quote different from this calculator?","a":"Lenders include your exact rate, PMI, escrow amounts, and closing costs or fees. This tool gives a close estimate of the recurring monthly payment; the Loan Estimate document from a lender is the binding figure."},
+  {"q":"Is my data stored anywhere?","a":"No. All calculations run in your browser — the numbers you enter are never sent to a server or stored."},
  ],
 })
 
@@ -159,15 +186,43 @@ TOOLS.append({
  """,
  "intro_html":"""
   <h2>How to use the loan calculator</h2>
-  <p>Enter the amount you're borrowing, the annual interest rate (APR), and how long you'll take to repay it. The calculator returns your fixed monthly payment, the total interest you'll pay over the life of the loan, and a year-by-year breakdown of how the balance falls.</p>
+  <p>Enter the amount you&rsquo;re borrowing, the annual interest rate (APR), and how long you&rsquo;ll take to repay it. The calculator returns your fixed monthly payment, the total interest you&rsquo;ll pay over the life of the loan, and a year-by-year breakdown of how the balance falls. It works for any fixed-rate installment loan &mdash; personal loans, student loans, medical financing, or debt-consolidation loans.</p>
   <h3>The formula</h3>
-  <p>Payments use the amortization formula <code>M = P · r · (1+r)ⁿ / ((1+r)ⁿ − 1)</code> — the same math banks use — where <code>P</code> is the amount borrowed, <code>r</code> is the monthly rate, and <code>n</code> is the number of months.</p>
-  <p>Shortening the term raises the monthly payment but sharply cuts total interest. Even a small rate difference can change the total cost of a loan by thousands of dollars, so it pays to compare offers.</p>
+  <p>Payments use the amortization formula <code>M = P &middot; r &middot; (1+r)&#8319; / ((1+r)&#8319; &minus; 1)</code> &mdash; the same math banks use &mdash; where <code>P</code> is the amount borrowed, <code>r</code> is the monthly rate, and <code>n</code> is the number of months.</p>
+
+  <h2>Worked examples</h2>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Loan</th><th>Rate / term</th><th>Monthly payment</th><th>Total interest</th></tr></thead>
+   <tbody>
+    <tr><td>$5,000</td><td>12% &middot; 3 yr</td><td>$166.07</td><td>$979</td></tr>
+    <tr><td>$10,000</td><td>10% &middot; 5 yr</td><td>$212.47</td><td>$2,748</td></tr>
+    <tr><td>$20,000</td><td>9.5% &middot; 5 yr</td><td>$420.04</td><td>$5,202</td></tr>
+    <tr><td>$20,000</td><td>9.5% &middot; 3 yr</td><td>$640.66</td><td>$3,064</td></tr>
+   </tbody>
+  </table></div>
+  <p>Notice the last two rows: the same $20,000 loan repaid over 3 years instead of 5 costs $220 more each month but saves <strong>$2,138 in interest</strong>. The term you choose matters as much as the rate you&rsquo;re offered.</p>
+
+  <h2>Interest rate vs. APR</h2>
+  <p>The <strong>interest rate</strong> is the cost of borrowing the principal. <strong>APR</strong> (annual percentage rate) also folds in certain fees such as origination charges, so it&rsquo;s usually a little higher and is the better number for comparing offers side by side. Enter the APR here for the most realistic result.</p>
+
+  <h2>What&rsquo;s a good rate?</h2>
+  <p>Personal loan rates depend heavily on your credit profile. As a rough map: excellent credit often sees single-digit to low-teens APRs, average credit lands in the mid-teens to low twenties, and weaker credit can be quoted 25&ndash;36%. Because the spread is so wide, <strong>prequalify with at least three lenders</strong> &mdash; prequalification uses a soft credit pull, so comparing offers doesn&rsquo;t hurt your score.</p>
+
+  <h2>How to pay less interest</h2>
+  <p>Four levers, all visible in the calculator above: choose a <strong>shorter term</strong>; make <strong>extra principal payments</strong> (interest is charged on the remaining balance, so early principal reduces every future charge); <strong>refinance</strong> if your credit has improved since you took the loan; and watch for <strong>origination fees</strong> (often 1&ndash;8% deducted up front) that can make a low advertised rate more expensive than it looks.</p>
+
+  <h2>When a personal loan makes sense</h2>
+  <p>Fixed-rate personal loans shine for <strong>consolidating credit-card debt</strong> (a fixed 12% beats a revolving 24%), one-off necessary expenses, and situations where a predictable payment and a firm payoff date keep you disciplined. They make less sense for ongoing spending, or when the payment doesn&rsquo;t fit your budget &mdash; compare strategies with the <a href="/debt-payoff-calculator/">debt payoff calculator</a> and check what fits with the <a href="/budget-calculator/">budget calculator</a>.</p>
  """,
  "faqs":[
-  {"q":"What's the difference between interest rate and APR?","a":"The interest rate is the cost of borrowing the principal. APR (annual percentage rate) also includes certain fees, so it's usually slightly higher and is a better figure for comparing loans. Enter the APR here for the most realistic result."},
+  {"q":"What's the monthly payment on a $10,000 loan?","a":"At 10% APR over 5 years, about $212 a month with $2,748 total interest. A 3-year term raises the payment to roughly $323 but cuts total interest to about $1,616."},
+  {"q":"What's the difference between interest rate and APR?","a":"The interest rate is the cost of borrowing the principal. APR includes certain fees, so it's usually slightly higher and is the better figure for comparing loans. Enter the APR here for the most realistic result."},
+  {"q":"What is a good APR for a personal loan?","a":"It depends on your credit. Excellent credit commonly sees single-digit to low-teens APRs; average credit mid-teens to low twenties; weaker credit 25–36%. Always compare at least three prequalified offers."},
+  {"q":"Does checking my rate hurt my credit score?","a":"Prequalification uses a soft credit pull, which does not affect your score. Only a full application triggers a hard inquiry, and rate-shopping several lenders within a short window is typically treated gently by scoring models."},
+  {"q":"Can I pay my loan off early?","a":"Usually yes, and it saves interest since interest accrues on the remaining balance. Most personal loans have no prepayment penalty, but check your agreement — a few lenders charge one."},
+  {"q":"What are origination fees?","a":"An upfront charge, often 1–8% of the loan, deducted before you receive the money. A $10,000 loan with a 5% origination fee only pays out $9,500 — factor this in when comparing offers, or use the APR, which includes it."},
   {"q":"How can I pay less interest?","a":"Choose a shorter term, make extra payments toward principal, or secure a lower rate. Because interest is charged on the remaining balance, paying down principal early reduces every future interest charge."},
-  {"q":"Does this work for student or business loans?","a":"Yes — any fixed-rate installment loan with a set term works. Variable-rate loans will differ over time as the rate changes."},
+  {"q":"Does this work for student loans?","a":"Yes — for any fixed-rate loan with regular monthly payments. Federal student loans on income-driven plans vary with income, so this models the standard fixed repayment instead."},
  ],
 })
 
@@ -274,16 +329,42 @@ TOOLS.append({
  });
  """,
  "intro_html":"""
-  <h2>The power of compound interest</h2>
-  <p>Compound interest means you earn interest on your interest, not just your original deposit. Over long periods this snowball effect does most of the heavy lifting — which is why starting early matters so much. This calculator combines an initial deposit with regular monthly contributions and compounds monthly.</p>
+  <h2>What is compound interest?</h2>
+  <p>Compound interest is interest earned on interest. Each period, your balance grows &mdash; and the next period&rsquo;s interest is calculated on that bigger balance. Early on the effect looks small; over decades it becomes the dominant force in your savings. Albert Einstein probably never called it the eighth wonder of the world, but the math behind the legend is real.</p>
   <h3>The formula</h3>
-  <p>Future value is <code>FV = P(1+r)ⁿ + PMT·[((1+r)ⁿ − 1) / r]</code>, where <code>P</code> is your starting balance, <code>PMT</code> is the monthly contribution, <code>r</code> is the monthly rate (annual ÷ 12), and <code>n</code> is the number of months.</p>
-  <p>Notice how, over 20–30 years, the “interest earned” slice often grows larger than everything you actually contributed. That's compounding at work.</p>
+  <p>For a lump sum: <code>A = P (1 + r/n)&#8319;&#7511;</code>, where <code>P</code> is the starting amount, <code>r</code> the annual rate, <code>n</code> the number of compounding periods per year, and <code>t</code> the years. This calculator compounds monthly and adds your contribution at the end of each month.</p>
+
+  <h2>Worked example: $5,000 plus $300 a month</h2>
+  <p>Start with <strong>$5,000</strong>, add <strong>$300 every month</strong>, and earn <strong>7% a year</strong> for 20 years. You&rsquo;ll have contributed $77,000 of your own money &mdash; but the balance grows to about <strong>$176,000</strong>. More than half of the final amount ($99,000+) is growth, not deposits. That&rsquo;s compounding doing the heavy lifting.</p>
+
+  <h2>The cost of waiting ten years</h2>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Start age</th><th>Contributed by 65</th><th>Balance at 65 (7%)</th></tr></thead>
+   <tbody>
+    <tr><td>25</td><td>$96,000</td><td>~$525,000</td></tr>
+    <tr><td>35</td><td>$72,000</td><td>~$244,000</td></tr>
+   </tbody>
+  </table></div>
+  <p>Both savers put away <strong>$200/month at 7%</strong>. The one who started at 25 contributes only $24,000 more, yet retires with roughly <strong>$280,000 more</strong>. Time in the market is the single biggest input you control &mdash; more than the rate, more than the amount.</p>
+
+  <h2>The Rule of 72</h2>
+  <p>Divide 72 by your annual return to estimate how long money takes to double. At 7%, that&rsquo;s about every 10 years &mdash; and indeed $10,000 at 7% grows to about <strong>$20,100 in 10 years</strong> with monthly compounding. At 3% it takes ~24 years; at 10%, ~7 years.</p>
+
+  <h2>Does compounding frequency matter?</h2>
+  <p>Less than most people think. $10,000 at 7% for 10 years grows to $19,672 compounded annually and $20,097 compounded monthly &mdash; a difference of about 2%. What moves the needle far more is the rate itself, your contributions, and how long you stay invested. When comparing savings accounts, look at <strong>APY</strong> (which already includes compounding) rather than the nominal rate.</p>
+
+  <h2>Where you&rsquo;ll meet compound interest</h2>
+  <p>Working <em>for</em> you: high-yield savings accounts, CDs, reinvested dividends, and long-run stock index funds (where ~7% is a commonly cited historical average after inflation &mdash; useful for planning, never guaranteed). Working <em>against</em> you: credit-card balances, where 20%+ APRs compound on what you owe &mdash; the same math in reverse. If that&rsquo;s your situation, start with the <a href="/credit-card-payoff-calculator/">credit card payoff calculator</a> or the <a href="/debt-payoff-calculator/">debt payoff calculator</a>. To turn a target amount into a monthly savings plan, use the <a href="/savings-goal-calculator/">savings goal calculator</a>, and for the long game see the <a href="/retirement-calculator/">retirement calculator</a>.</p>
  """,
  "faqs":[
-  {"q":"What interest rate should I use?","a":"For a savings account, use its APY (often 0.5%–5%). For long-term stock market investing, many people model 6%–8% as a long-run average, though real returns vary year to year and are never guaranteed."},
-  {"q":"What does compounded monthly mean?","a":"It means interest is calculated and added to your balance every month, so the next month you earn interest on a slightly larger amount. More frequent compounding produces slightly higher growth than annual compounding."},
-  {"q":"Why is starting early so powerful?","a":"Because compounding multiplies over time, money invested in your 20s has decades to grow. Even small contributions started early often beat larger contributions started later."},
+  {"q":"How is compound interest calculated?","a":"Each period, interest is calculated on the current balance — including previously earned interest — using A = P(1 + r/n)^(nt). This calculator compounds monthly and adds contributions at the end of each month."},
+  {"q":"What is the Rule of 72?","a":"A quick mental shortcut: divide 72 by the annual return to estimate the years needed for money to double. At 8%, roughly 9 years; at 6%, about 12."},
+  {"q":"How much will $10,000 be worth in 10 years at 7%?","a":"About $20,100 with monthly compounding (about $19,700 compounded annually) — roughly doubling, exactly as the Rule of 72 predicts."},
+  {"q":"What rate of return should I assume?","a":"For long-term stock index investing, planners often model 6–8% annually; savings accounts currently earn much less. Historical averages are useful for planning but never guaranteed — try a range of rates with the slider to see best and worst cases."},
+  {"q":"What's the difference between simple and compound interest?","a":"Simple interest is always calculated on the original principal only. Compound interest is calculated on principal plus accumulated interest, so it grows faster — dramatically so over long periods."},
+  {"q":"Is interest I earn taxed?","a":"Generally yes — bank interest is typically taxable income, and investment growth may be taxed as capital gains, unless held in tax-advantaged retirement accounts. This calculator shows pre-tax growth."},
+  {"q":"Can compound interest work against me?","a":"Yes. Credit-card debt compounds the same way in reverse: interest is charged on your balance including previous interest. That's why carrying a 20%+ APR balance grows so quickly and why paying it down beats most investments."},
+  {"q":"Do monthly contributions change the math a lot?","a":"Enormously. In the example above, $300/month accounts for most of the final balance. Consistent contributions plus time beat trying to pick the perfect rate."},
  ],
 })
 
