@@ -541,17 +541,45 @@ TOOLS.append({
  """,
  "intro_html":"""
   <h2>How to calculate percentages</h2>
-  <p>A percentage is just a fraction of 100. These three calculators cover the questions people ask most:</p>
-  <h3>Percent of a number</h3>
-  <p>To find <code>X%</code> of a number, multiply the number by X and divide by 100. Example: 15% of 200 = 200 × 15 ÷ 100 = <strong>30</strong>.</p>
-  <h3>What percent one number is of another</h3>
-  <p>Divide the part by the whole and multiply by 100. Example: 45 is 45 ÷ 180 × 100 = <strong>25%</strong> of 180.</p>
-  <h3>Percentage change</h3>
-  <p>Subtract the old value from the new value, divide by the old value, and multiply by 100. Example: from 120 to 150 is (150 − 120) ÷ 120 × 100 = <strong>+25%</strong>.</p>
+  <p>A percentage is simply a fraction of 100 &mdash; the word comes from the Latin <em>per centum</em>, &ldquo;per hundred.&rdquo; Almost every percentage question is one of three types, and this calculator covers all three. Enter your numbers above for an instant answer, or follow the worked examples below to do it by hand.</p>
+
+  <h3>1. Percent of a number</h3>
+  <p>To find <code>X%</code> of a number, multiply the number by X and divide by 100. Example: 15% of 200 = 200 &times; 15 &divide; 100 = <strong>30</strong>. This is the everyday case &mdash; a tip, a commission, a portion of a total.</p>
+
+  <h3>2. What percent one number is of another</h3>
+  <p>Divide the part by the whole and multiply by 100. Example: 45 is 45 &divide; 180 &times; 100 = <strong>25%</strong> of 180. Use this for &ldquo;what score did I get?&rdquo; or &ldquo;what share of the budget is this?&rdquo;</p>
+
+  <h3>3. Percentage change (increase or decrease)</h3>
+  <p>Subtract the old value from the new value, divide by the <em>old</em> value, and multiply by 100. Example: from 120 to 150 is (150 &minus; 120) &divide; 120 &times; 100 = <strong>+25%</strong>. A positive result is an increase; a negative one is a decrease.</p>
+
+  <h2>Quick reference: common percentages</h2>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Percentage</th><th>Of 50</th><th>Of 200</th><th>Of 1,000</th></tr></thead>
+   <tbody>
+    <tr><td>5%</td><td>2.5</td><td>10</td><td>50</td></tr>
+    <tr><td>10%</td><td>5</td><td>20</td><td>100</td></tr>
+    <tr><td>15%</td><td>7.5</td><td>30</td><td>150</td></tr>
+    <tr><td>20%</td><td>10</td><td>40</td><td>200</td></tr>
+    <tr><td>25%</td><td>12.5</td><td>50</td><td>250</td></tr>
+   </tbody>
+  </table></div>
+
+  <h2>Mental math shortcuts</h2>
+  <p>To find <strong>10%</strong>, move the decimal one place left (10% of 240 = 24). For <strong>1%</strong>, move it two places (1% of 240 = 2.4). Build others from those: 20% is 10% doubled, 5% is 10% halved, 15% is 10% plus 5%. And a handy trick &mdash; <strong>X% of Y equals Y% of X</strong>, so if 18% of 50 looks hard, flip it to 50% of 18 = 9.</p>
+
+  <h2>The classic mistake: percentage points vs. percent</h2>
+  <p>If an interest rate rises from 4% to 6%, that&rsquo;s an increase of <strong>2 percentage points</strong> &mdash; but a <strong>50% increase</strong> in the rate (2 &divide; 4 = 50%). News headlines mix these up constantly. When a base value is itself a percentage, say &ldquo;percentage points&rdquo; for the absolute gap and &ldquo;percent&rdquo; for the relative change.</p>
+
+  <h2>Where you&rsquo;ll use this</h2>
+  <p>Percentages run through everyday money: a <a href="/tip-calculator/">tip</a> on a restaurant bill, a <a href="/discount-calculator/">discount</a> at the register, sales tax, a grade on a test, or the growth of an <a href="/compound-interest-calculator/">investment</a> over time. Master the three cases above and almost every real-world percentage question becomes a ten-second calculation.</p>
  """,
  "faqs":[
-  {"q":"How do I calculate a percentage increase?","a":"Subtract the original number from the new number, divide the result by the original number, then multiply by 100. A positive result is an increase; a negative result is a decrease."},
-  {"q":"How do I add a percentage to a price?","a":"Multiply the price by (1 + percentage/100). For example, adding 8% tax to $50 is 50 × 1.08 = $54. Our discount &amp; sales-tax calculator does this automatically."},
+  {"q":"How do I calculate a percentage increase?","a":"Subtract the original number from the new number, divide the result by the original number, then multiply by 100. From 120 to 150 is (150-120)/120 x 100 = 25% increase. A negative result means a decrease."},
+  {"q":"How do I find what percent one number is of another?","a":"Divide the part by the whole and multiply by 100. For example, 45 out of 180 is 45/180 x 100 = 25%."},
+  {"q":"How do I add a percentage to a price?","a":"Multiply the price by (1 + percentage/100). Adding 8% tax to $50 is 50 x 1.08 = $54. Our discount & sales-tax calculator does this automatically."},
+  {"q":"What's the difference between percentage points and percent?","a":"A rise from 4% to 6% is 2 percentage points but a 50% increase in the rate itself. Use 'percentage points' for the absolute gap between two percentages and 'percent' for the relative change."},
+  {"q":"What is a quick way to calculate 15%?","a":"Find 10% by moving the decimal one place left, then add half of it again. For 80: 10% is 8, half of that is 4, so 15% is 12."},
+  {"q":"Is X% of Y the same as Y% of X?","a":"Yes — they're always equal. So 18% of 50 equals 50% of 18, which is 9. Flipping the numbers often makes the mental math easier."},
  ],
 })
 
@@ -784,13 +812,38 @@ TOOLS.append({
  """,
  "intro_html":"""
   <h2>How to calculate a discount</h2>
-  <p>To find a sale price, multiply the original price by the discount percentage to get the savings, then subtract it from the original. For example, 25% off $120 saves $30, for a sale price of $90. This calculator also adds sales tax so you see the true amount you'll pay at the register.</p>
-  <h3>The formula</h3>
-  <p>Sale price = <code>Price × (1 − discount%/100)</code>. Final total = <code>Sale price × (1 + tax%/100)</code>. Set sales tax to 0% if you just want the discounted price.</p>
+  <p>To find a sale price, multiply the original price by the discount percentage to get the savings, then subtract that from the original. For example, <strong>25% off $120 saves $30</strong>, for a sale price of $90. This calculator also adds sales tax, so you see the true amount you&rsquo;ll actually pay at the register &mdash; not just the shelf sticker.</p>
+  <h3>The formulas</h3>
+  <p>Sale price = <code>Price &times; (1 &minus; discount%/100)</code>. Final total = <code>Sale price &times; (1 + tax%/100)</code>. Set sales tax to 0% if you just want the discounted price.</p>
+
+  <h2>Quick reference: what you pay after a discount</h2>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>Discount</th><th>$50 item</th><th>$100 item</th><th>$200 item</th></tr></thead>
+   <tbody>
+    <tr><td>10% off</td><td>$45.00</td><td>$90.00</td><td>$180.00</td></tr>
+    <tr><td>20% off</td><td>$40.00</td><td>$80.00</td><td>$160.00</td></tr>
+    <tr><td>25% off</td><td>$37.50</td><td>$75.00</td><td>$150.00</td></tr>
+    <tr><td>30% off</td><td>$35.00</td><td>$70.00</td><td>$140.00</td></tr>
+    <tr><td>50% off</td><td>$25.00</td><td>$50.00</td><td>$100.00</td></tr>
+   </tbody>
+  </table></div>
+
+  <h2>&ldquo;Extra 20% off&rdquo;: how stacked discounts really work</h2>
+  <p>When a store takes an extra percentage off an already-reduced price, the discounts <strong>don&rsquo;t simply add up</strong>. A $100 item at &ldquo;40% off, then an extra 20% off&rdquo; is <em>not</em> 60% off. It&rsquo;s $100 &rarr; $60 (after 40%) &rarr; $48 (after another 20%). That&rsquo;s a real discount of <strong>52%, not 60%</strong>. Stacked percentages always come out to less than the sum, because the second cut applies to a smaller number. To check a stacked deal, run the first discount here, then use the result as the new original price and apply the second.</p>
+
+  <h2>Does the discount or the tax come first?</h2>
+  <p>The discount always comes first. Stores reduce the price, then charge sales tax on the <strong>discounted</strong> amount &mdash; which is exactly what this calculator does. So a $120 jacket at 25% off in a 7% tax area is $90 after discount, then $96.30 out the door. You never pay tax on money you saved.</p>
+
+  <h2>Is the deal actually good?</h2>
+  <p>A useful habit: convert &ldquo;percent off&rdquo; into <strong>dollars saved</strong>, which this tool shows directly. &ldquo;15% off&rdquo; sounds modest but is $75 on a $500 purchase; &ldquo;50% off&rdquo; a $6 item is $3. The percentage grabs attention, but the dollar figure tells you whether it&rsquo;s worth acting on. For the percentage math on its own, see the <a href="/percentage-calculator/">percentage calculator</a>; for splitting a discounted bill, the <a href="/tip-calculator/">tip calculator</a> handles the divide.</p>
  """,
  "faqs":[
-  {"q":"How do I calculate percent off?","a":"Multiply the original price by the percentage and divide by 100 to get the dollars saved, then subtract that from the price. This tool does it instantly and also shows the tax-inclusive total."},
-  {"q":"Is sales tax applied before or after the discount?","a":"Sales tax is normally charged on the discounted (sale) price, which is what this calculator does."},
+  {"q":"How do I calculate percent off?","a":"Multiply the original price by the percentage and divide by 100 to get the dollars saved, then subtract that from the price. 25% off $120 saves $30, for a $90 sale price. This tool does it instantly and adds tax too."},
+  {"q":"Is sales tax applied before or after the discount?","a":"After. Stores reduce the price first, then charge sales tax on the discounted amount — which is what this calculator does. You never pay tax on the money you saved."},
+  {"q":"How do stacked discounts work, like '40% off plus an extra 20%'?","a":"They multiply, they don't add. $100 at 40% off is $60, then 20% off that is $48 — a real discount of 52%, not 60%. Stacked percentages always total less than their sum."},
+  {"q":"What does 25% off actually save me?","a":"A quarter of the price. On $37.50 for a $50 item, $75 for a $100 item, $150 for a $200 item. Enter your price above for the exact saving and final total."},
+  {"q":"How do I work out the original price from a sale price?","a":"Divide the sale price by (1 minus the discount as a decimal). A $90 item at 25% off was 90 / 0.75 = $120 originally."},
+  {"q":"Is a bigger percentage always the better deal?","a":"Not necessarily — convert it to dollars. 15% off a $500 purchase saves $75, while 50% off a $6 item saves $3. The dollar figure, which this tool shows, is what matters."},
  ],
 })
 
@@ -835,12 +888,39 @@ TOOLS.append({
  """,
  "intro_html":"""
   <h2>Convert everyday units instantly</h2>
-  <p>This converter handles the measurements people look up most: length (meters, feet, miles, inches and more), weight (kilograms, pounds, ounces, stone), temperature (Celsius, Fahrenheit, Kelvin) and volume (liters, gallons, cups, fluid ounces). Pick a category, enter a value, and choose the units to convert between.</p>
-  <p>Common quick conversions: 1 inch = 2.54 cm, 1 mile = 1.609 km, 1 kg = 2.205 lb, and 0°C = 32°F. Temperature uses proper offset formulas rather than simple ratios, so conversions are exact.</p>
+  <p>This converter handles the measurements people look up most: <strong>length</strong> (meters, feet, miles, inches and more), <strong>weight</strong> (kilograms, pounds, ounces, stone), <strong>temperature</strong> (Celsius, Fahrenheit, Kelvin) and <strong>volume</strong> (liters, gallons, cups, fluid ounces). Pick a category, enter a value, and choose the units &mdash; the result updates instantly.</p>
+
+  <h2>The conversions people look up most</h2>
+  <div class="tbl-wrap"><table>
+   <thead><tr><th>From</th><th>To</th><th>Multiply by</th></tr></thead>
+   <tbody>
+    <tr><td>Inches</td><td>Centimeters</td><td>2.54</td></tr>
+    <tr><td>Centimeters</td><td>Inches</td><td>0.3937 (&divide; 2.54)</td></tr>
+    <tr><td>Miles</td><td>Kilometers</td><td>1.609</td></tr>
+    <tr><td>Kilometers</td><td>Miles</td><td>0.6214</td></tr>
+    <tr><td>Kilograms</td><td>Pounds</td><td>2.2046</td></tr>
+    <tr><td>Pounds</td><td>Kilograms</td><td>0.4536</td></tr>
+    <tr><td>Liters</td><td>US gallons</td><td>0.2642</td></tr>
+    <tr><td>US gallons</td><td>Liters</td><td>3.785</td></tr>
+   </tbody>
+  </table></div>
+
+  <h2>Temperature is different &mdash; it uses offsets</h2>
+  <p>Length and weight convert by a simple multiplier, but temperature scales don&rsquo;t start at the same zero, so they need offset formulas: <code>&deg;F = &deg;C &times; 9/5 + 32</code> and <code>&deg;C = (&deg;F &minus; 32) &times; 5/9</code>. Worth memorizing: <strong>0&deg;C = 32&deg;F</strong> (freezing), <strong>37&deg;C = 98.6&deg;F</strong> (body temperature), and <strong>100&deg;C = 212&deg;F</strong> (boiling). A fast mental estimate for &deg;C to &deg;F: double it and add 30 &mdash; 20&deg;C &asymp; 70&deg;F (exact is 68).</p>
+
+  <h2>Metric and imperial, briefly</h2>
+  <p>Most of the world uses the <strong>metric system</strong> (meters, kilograms, liters, Celsius); the United States mainly uses <strong>imperial/US customary</strong> units (feet, pounds, gallons, Fahrenheit). A subtlety worth knowing: a <strong>US gallon (3.785 L) is smaller than an imperial gallon (4.546 L)</strong>, and US and imperial fluid ounces differ slightly too &mdash; so recipe and fuel conversions between the US and UK aren&rsquo;t interchangeable. This tool uses US customary units for volume.</p>
+
+  <h2>Everyday uses</h2>
+  <p>Reading a recipe from another country, checking your height and weight in the other system, planning a road trip in the &ldquo;wrong&rdquo; units, or following a workout plan &mdash; a quick unit conversion clears it up. For body measurements specifically, the <a href="/bmi-calculator/">BMI calculator</a> accepts both metric and imperial directly.</p>
  """,
  "faqs":[
-  {"q":"How do I convert cm to inches?","a":"Divide centimeters by 2.54. For example, 10 cm ÷ 2.54 = 3.94 inches. Select Length, enter your value, and choose Centimeters → Inches."},
-  {"q":"How do I convert kg to pounds?","a":"Multiply kilograms by 2.2046. For example, 70 kg × 2.2046 = 154.3 lb. Choose Weight and set Kilograms → Pounds."},
+  {"q":"How do I convert cm to inches?","a":"Divide centimeters by 2.54. For example, 10 cm / 2.54 = 3.94 inches. Select Length, enter your value, and choose Centimeters to Inches."},
+  {"q":"How do I convert kg to pounds?","a":"Multiply kilograms by 2.2046. For example, 70 kg x 2.2046 = 154.3 lb. Choose Weight and set Kilograms to Pounds."},
+  {"q":"How do I convert Celsius to Fahrenheit?","a":"Multiply by 9/5 and add 32: F = C x 9/5 + 32. So 20C = 68F. A quick estimate is to double the Celsius value and add 30."},
+  {"q":"How many kilometers is a mile?","a":"1 mile = 1.609 kilometers, and 1 kilometer = 0.6214 miles. To go from miles to km, multiply by 1.609."},
+  {"q":"Is a US gallon the same as a UK gallon?","a":"No. A US gallon is 3.785 liters; an imperial (UK) gallon is 4.546 liters — about 20% larger. US and imperial fluid ounces differ slightly too, so US and UK volume measures aren't interchangeable."},
+  {"q":"Why does temperature need a special formula?","a":"Because the scales don't share a zero point, temperature uses an offset (F = C x 9/5 + 32) rather than a simple multiplier like length or weight."},
  ],
 })
 
