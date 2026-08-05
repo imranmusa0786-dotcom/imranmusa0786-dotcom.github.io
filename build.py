@@ -88,7 +88,7 @@ def main():
         related = [r for r in TOOLS if r["cat"] == t["cat"] and r["slug"] != t["slug"]][:3]
         if len(related) < 3:
             related += [r for r in TOOLS if r["slug"] != t["slug"] and r not in related][:3 - len(related)]
-        jl = [webapp_ld(t), breadcrumb_ld(t)]
+        jl = [breadcrumb_ld(t)]
         if t.get("faqs"):
             jl.append(faq_ld(t))
         write(f"{t['slug']}/index.html", calc_tpl.render(
@@ -113,7 +113,7 @@ def main():
     # static info pages
     metas = {
         "financial-calculators": ("Financial Calculators — The Complete Guide | " + SITE["name"], "Every free financial calculator explained: mortgages, loans, debt payoff, compound interest, retirement and more — and how to combine them for big money decisions."),
-        "about": ("About " + SITE["name"], "About TechShield Tools — free, accurate, private calculators and tools for money and everyday life."),
+        "about": ("About " + SITE["name"] + " — Free Calculators & Everyday Tools", "About TechShield Tools — free, accurate, private calculators and tools for money and everyday life."),
         "contact": ("Contact — " + SITE["name"], "Contact TechShield Tools with feedback, corrections, or calculator suggestions."),
         "privacy": ("Privacy Policy — " + SITE["name"], "TechShield Tools privacy policy. Calculations run in your browser; your numbers are never sent or stored."),
         "disclaimer": ("Disclaimer — " + SITE["name"], "TechShield Tools disclaimer. Calculators provide general estimates for educational purposes, not professional advice."),
@@ -143,6 +143,24 @@ def main():
     write("sitemap.xml", "\n".join(sm))
 
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
+
+    # llms.txt — tells AI crawlers what the site is and points to key pages
+    tool_lines = "\n".join(f"- [{t['name']}]({BASE}/{t['slug']}/): {t['short']}" for t in TOOLS)
+    llms = (
+        f"# {SITE['name']}\n\n"
+        f"> {SITE['tagline']} Free online calculators and everyday tools for money and life — "
+        f"mortgages, loans, compound interest, budgeting, percentages, BMI, tips and more. "
+        f"No sign-up; all calculations run in the browser.\n\n"
+        f"## Guides\n"
+        f"- [Financial Calculators: The Complete Guide]({BASE}/financial-calculators/): "
+        f"how every money calculator works and when to use it\n\n"
+        f"## Calculators & Tools\n{tool_lines}\n\n"
+        f"## About\n"
+        f"- [About]({BASE}/about/)\n"
+        f"- [Privacy]({BASE}/privacy/)\n"
+        f"- [Disclaimer]({BASE}/disclaimer/)\n"
+    )
+    write("llms.txt", llms)
 
     # ads.txt — only emitted once a real AdSense publisher ID is set in config.yaml
     pub = str(SITE.get("adsense_publisher_id") or "").strip()
